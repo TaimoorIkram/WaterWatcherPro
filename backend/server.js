@@ -17,23 +17,9 @@ app.use('/sensors', sensorRoutes);
 app.use('/users', userRoutes);
 app.use('/readings', readingRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
-
-// Initialize the database file only once
-const dbPath = path.join(__dirname, 'db.json');
-if (!fs.existsSync(dbPath)) {
-  const initialData = {
-    sensors: [],
-    users: [],
-    readings: [],
-  };
-
-  fs.writeFileSync(dbPath, JSON.stringify(initialData, null, 2), 'utf-8');
-  console.log('Database initialized with initial data.');
-} else {
-  console.log('Database already exists. Skipping initialization.');
-}
+// No need to initialize db here anymore since it's handled in config/db.js
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

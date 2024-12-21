@@ -3,11 +3,20 @@ const FileSync = require('lowdb/adapters/FileSync');
 const path = require('path');
 const fs = require('fs');
 
-const dbPath = path.join(__dirname, '../db.json');
+// Set the correct path to db.json
+const dbPath = path.join(__dirname, 'db.json');
 
+// Initialize the database file only once
 if (!fs.existsSync(dbPath)) {
   console.log('Database file does not exist. Initializing with defaults...');
-  fs.writeFileSync(dbPath, JSON.stringify({ sensors: [], users: [], readings: [] }, null, 2), 'utf-8');
+  const initialData = {
+    Household: [],
+    User: [],
+    Sensor: [],
+    HouseholdConfig: [],
+    SensorData: []
+  };
+  fs.writeFileSync(dbPath, JSON.stringify(initialData, null, 2), 'utf-8');
 } else {
   console.log('Database file already exists. Skipping initialization.');
 }
