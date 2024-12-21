@@ -86,32 +86,32 @@ app.get('/analytics', (req, res) => {
 });
 
 // Add sensor
-app.post('/sensors', (req, res) => {
-  try {
-    const { sensorId, threshold } = req.body;
+// app.post('/sensors', (req, res) => {
+//   try {
+//     const { sensorId, threshold } = req.body;
     
-    if (!sensorId || threshold === undefined) {
-      return res.status(400).json({ error: 'sensorId and threshold are required' });
-    }
+//     if (!sensorId || threshold === undefined) {
+//       return res.status(400).json({ error: 'sensorId and threshold are required' });
+//     }
 
-    const existingSensor = db.get('sensors')
-      .find({ sensorId })
-      .value();
+//     const existingSensor = db.get('sensors')
+//       .find({ sensorId })
+//       .value();
 
-    if (existingSensor) {
-      return res.status(409).json({ error: 'Sensor already exists' });
-    }
+//     if (existingSensor) {
+//       return res.status(409).json({ error: 'Sensor already exists' });
+//     }
 
-    db.get('sensors')
-      .push({ sensorId, threshold })
-      .write();
+//     db.get('sensors')
+//       .push({ sensorId, threshold })
+//       .write();
 
-    res.status(201).json({ message: 'Sensor added', sensorId, threshold });
-  } catch (error) {
-    console.error('Error adding sensor:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+//     res.status(201).json({ message: 'Sensor added', sensorId, threshold });
+//   } catch (error) {
+//     console.error('Error adding sensor:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
 
 // Add actuator mapping
 app.post('/mappings', (req, res) => {
@@ -214,6 +214,176 @@ app.post('/readings', (req, res) => {
     console.error('Error adding reading:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
+});
+
+// ---------------------------------------------------
+// Users Endpoints
+// ---------------------------------------------------
+
+// Create User
+app.post('/users', async (req, res) => {
+  const { name, email, password } = req.body;
+  const newUser = { userId: uuid(), name, email, password };
+  db.data.users.push(newUser);
+  await db.write();
+  res.status(201).json(newUser);
+});
+
+// Read Users
+app.get('/users', (req, res) => {
+  res.json(db.data.users);
+});
+
+// Update User
+app.put('/users/:id', async (req, res) => {
+  const user = db.data.users.find((u) => u.userId === req.params.id);
+  if (!user) return res.status(404).json({ error: 'User not found' });
+  Object.assign(user, req.body);
+  await db.write();
+  res.json(user);
+});
+
+// Delete User
+app.delete('/users/:id', async (req, res) => {
+  db.data.users = db.data.users.filter((u) => u.userId !== req.params.id);
+  await db.write();
+  res.status(204).send();
+});
+
+// ---------------------------------------------------
+// Sensors Endpoints
+// ---------------------------------------------------
+
+// Create Sensor
+app.post('/sensors', async (req, res) => {
+  const { userId } = req.body;
+  const newSensor = { sensorId: uuid(), userId };
+  db.data.sensors.push(newSensor);
+  await db.write();
+  res.status(201).json(newSensor);
+});
+
+// Read Sensors
+app.get('/sensors', (req, res) => {
+  res.json(db.data.sensors);
+});
+
+// Update Sensor
+app.put('/sensors/:id', async (req, res) => {
+  const sensor = db.data.sensors.find((s) => s.sensorId === req.params.id);
+  if (!sensor) return res.status(404).json({ error: 'Sensor not found' });
+  Object.assign(sensor, req.body);
+  await db.write();
+  res.json(sensor);
+});
+
+// Delete Sensor
+app.delete('/sensors/:id', async (req, res) => {
+  db.data.sensors = db.data.sensors.filter((s) => s.sensorId !== req.params.id);
+  await db.write();
+  res.status(204).send();
+});
+
+// ---------------------------------------------------
+// Sensor Data Endpoints
+// ---------------------------------------------------
+
+// Create Sensor Data
+app.post('/sensor-data', async (req, res) => {
+  const { sensorId, waterLevel } = req.body;
+  const newData = { dataId: uuid(), sensorId, waterLevel, timestamp: new Date().toISOString() };
+  db.data.sensorData.push(newData);
+  await db.write();
+  res.status(201).json(newData);
+});
+
+// Read Sensor Data
+app.get('/sensor-data', (req, res) => {
+  res.json(db.data.sensorData);
+});
+
+// Update Sensor Data
+app.put('/sensor-data/:id', async (req, res) => {
+  const data = db.data.sensorData.find((d) => d.dataId === req.params.id);
+  if (!data) return res.status(404).json({ error: 'Data not found' });
+  Object.assign(data, req.body);
+  await db.write();
+  res.json(data);
+});
+
+// Delete Sensor Data
+app.delete('/sensor-data/:id', async (req, res) => {
+  db.data.sensorData = db.data.sensorData.filter((d) => d.dataId !== req.params.id);
+  await db.write();
+  res.status(204).send();
+});
+
+// ---------------------------------------------------
+// User Config Endpoints
+// ---------------------------------------------------
+
+// Create Configuration
+app.post('/user-configurations', async (req, res) => {
+  const { userId, peakLowThreshold, normalLowThreshold, highThreshold, peakHours, waterSupplyHours } = req.body;
+  const newConfig = { configId: uuid(), userId, peakLowThreshold, normalLowThreshold, highThreshold, peakHours, waterSupplyHours };
+  db.data.userConfigurations.push(newConfig);
+  await db.write();
+  res.status(201).json(newConfig);
+});
+
+// Read Configurations
+app.get('/user-configurations', (req, res) => {
+  res.json(db.data.userConfigurations);
+});
+
+// Update Configuration
+app.put('/user-configurations/:id', async (req, res) => {
+  const config = db.data.userConfigurations.find((c) => c.configId === req.params.id);
+  if (!config) return res.status(404).json({ error: 'Configuration not found' });
+  Object.assign(config, req.body);
+  await db.write();
+  res.json(config);
+});
+
+// Delete Configuration
+app.delete('/user-configurations/:id', async (req, res) => {
+  db.data.userConfigurations = db.data.userConfigurations.filter((c) => c.configId !== req.params.id);
+  await db.write();
+  res.status(204).send();
+});
+
+// ---------------------------------------------------
+// Motor State Endpoints
+// ---------------------------------------------------
+
+// Create Motor State
+app.post('/motor-state', async (req, res) => {
+  const { sensorId, motorState } = req.body;
+  const newMotorState = { motorId: uuid(), sensorId, motorState, timestamp: new Date().toISOString() };
+  db.data.motorState.push(newMotorState);
+  await db.write();
+  res.status(201).json(newMotorState);
+});
+
+// Read Motor States
+app.get('/motor-state', (req, res) => {
+  res.json(db.data.motorState);
+});
+
+// Update Motor State
+app.put('/motor-state/:id', async (req, res) => {
+  const motor = db.data.motorState.find((m) => m.motorId === req.params.id);
+  if (!motor) return res.status(404).json({ error: 'Motor state not found' });
+  Object.assign(motor, req.body);
+  await db.write();
+  res.json(motor);
+});
+
+// Delete Motor State
+app.delete('/motor-state/:id', async (req, res) => {
+  db.data.motorState = db.data.motorState.filter((m) => m.motorId !== req.params.id);
+  await db.write();
+  res.status(204).send();
 });
 
 // Error handling middleware
