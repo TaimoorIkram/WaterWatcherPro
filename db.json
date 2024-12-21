@@ -1,0 +1,3888 @@
+{
+  "sensors": [
+    {
+      "sensorId": "sensor1",
+      "threshold": 75
+    },
+    {
+      "sensorId": "20",
+      "threshold": 100
+    }
+  ],
+  "actuatorMappings": [
+    {
+      "sensorId": "sensor1",
+      "actuatorId": "actuator1"
+    },
+    {
+      "sensorId": "20",
+      "actuatorId": "2"
+    }
+  ],
+  "readings": [
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.1,
+      "timestamp": "2024-12-13T06:38:53.050Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.4,
+      "timestamp": "2024-12-13T06:39:03.051Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.7,
+      "timestamp": "2024-12-13T06:39:13.051Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62,
+      "timestamp": "2024-12-13T06:39:23.051Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.8,
+      "timestamp": "2024-12-13T06:39:33.052Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.7,
+      "timestamp": "2024-12-13T06:39:43.052Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.6,
+      "timestamp": "2024-12-13T06:39:53.053Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.5,
+      "timestamp": "2024-12-13T06:40:03.053Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69,
+      "timestamp": "2024-12-13T06:40:13.054Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.6,
+      "timestamp": "2024-12-13T06:40:23.055Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.1,
+      "timestamp": "2024-12-13T06:40:33.056Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.4,
+      "timestamp": "2024-12-13T06:40:43.056Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.8,
+      "timestamp": "2024-12-13T06:40:53.057Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.6,
+      "timestamp": "2024-12-13T06:41:03.057Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.5,
+      "timestamp": "2024-12-13T06:41:13.058Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.4,
+      "timestamp": "2024-12-13T06:41:23.058Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.5,
+      "timestamp": "2024-12-13T06:41:33.060Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.3,
+      "timestamp": "2024-12-13T06:41:43.061Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.7,
+      "timestamp": "2024-12-13T06:41:53.061Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.4,
+      "timestamp": "2024-12-13T06:42:03.062Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.6,
+      "timestamp": "2024-12-13T06:42:13.063Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.2,
+      "timestamp": "2024-12-13T06:42:23.064Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.4,
+      "timestamp": "2024-12-13T06:42:33.064Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.1,
+      "timestamp": "2024-12-13T06:42:43.066Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.8,
+      "timestamp": "2024-12-13T06:42:53.066Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.4,
+      "timestamp": "2024-12-13T06:43:03.067Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.2,
+      "timestamp": "2024-12-13T06:43:13.068Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51,
+      "timestamp": "2024-12-13T06:43:23.068Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.3,
+      "timestamp": "2024-12-13T06:43:33.068Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67,
+      "timestamp": "2024-12-13T06:43:43.069Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.9,
+      "timestamp": "2024-12-13T06:43:53.070Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57,
+      "timestamp": "2024-12-13T06:44:03.061Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.2,
+      "timestamp": "2024-12-13T06:44:13.049Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.9,
+      "timestamp": "2024-12-13T06:44:23.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.3,
+      "timestamp": "2024-12-13T06:44:33.039Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.8,
+      "timestamp": "2024-12-13T06:44:43.038Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.8,
+      "timestamp": "2024-12-13T06:44:53.037Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.3,
+      "timestamp": "2024-12-13T06:45:03.038Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.7,
+      "timestamp": "2024-12-13T06:45:13.038Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.9,
+      "timestamp": "2024-12-13T06:45:23.039Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.5,
+      "timestamp": "2024-12-13T06:45:33.040Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T06:45:43.040Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.6,
+      "timestamp": "2024-12-13T06:45:53.041Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.2,
+      "timestamp": "2024-12-13T06:46:03.042Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.1,
+      "timestamp": "2024-12-13T06:46:13.042Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.6,
+      "timestamp": "2024-12-13T06:46:23.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.6,
+      "timestamp": "2024-12-13T06:46:33.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.2,
+      "timestamp": "2024-12-13T06:46:43.044Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.9,
+      "timestamp": "2024-12-13T06:46:53.045Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.7,
+      "timestamp": "2024-12-13T06:47:03.046Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.2,
+      "timestamp": "2024-12-13T06:47:13.046Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.5,
+      "timestamp": "2024-12-13T06:47:23.047Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.8,
+      "timestamp": "2024-12-13T06:47:33.047Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.3,
+      "timestamp": "2024-12-13T06:47:43.049Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.5,
+      "timestamp": "2024-12-13T06:47:53.050Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.6,
+      "timestamp": "2024-12-13T06:48:03.050Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.1,
+      "timestamp": "2024-12-13T06:48:13.051Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.7,
+      "timestamp": "2024-12-13T06:48:23.052Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.4,
+      "timestamp": "2024-12-13T06:48:33.053Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.3,
+      "timestamp": "2024-12-13T06:48:43.053Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.1,
+      "timestamp": "2024-12-13T06:48:53.054Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T06:49:03.055Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.9,
+      "timestamp": "2024-12-13T06:49:13.055Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.1,
+      "timestamp": "2024-12-13T06:49:23.056Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.8,
+      "timestamp": "2024-12-13T06:49:33.056Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.6,
+      "timestamp": "2024-12-13T06:49:43.057Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55,
+      "timestamp": "2024-12-13T06:49:53.059Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.2,
+      "timestamp": "2024-12-13T06:50:03.060Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.6,
+      "timestamp": "2024-12-13T06:50:13.061Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.8,
+      "timestamp": "2024-12-13T06:50:23.062Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49,
+      "timestamp": "2024-12-13T06:50:33.062Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.3,
+      "timestamp": "2024-12-13T06:50:43.062Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.1,
+      "timestamp": "2024-12-13T06:50:53.062Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.7,
+      "timestamp": "2024-12-13T06:51:03.063Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.5,
+      "timestamp": "2024-12-13T06:51:13.064Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.3,
+      "timestamp": "2024-12-13T06:51:23.066Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71,
+      "timestamp": "2024-12-13T06:51:33.068Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.4,
+      "timestamp": "2024-12-13T06:51:43.068Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.4,
+      "timestamp": "2024-12-13T06:51:53.068Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.7,
+      "timestamp": "2024-12-13T06:52:03.070Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.9,
+      "timestamp": "2024-12-13T06:52:13.070Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.4,
+      "timestamp": "2024-12-13T06:52:23.071Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.3,
+      "timestamp": "2024-12-13T06:52:33.072Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.8,
+      "timestamp": "2024-12-13T06:52:43.073Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66,
+      "timestamp": "2024-12-13T06:52:53.074Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.9,
+      "timestamp": "2024-12-13T06:53:03.075Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.8,
+      "timestamp": "2024-12-13T06:53:13.076Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56,
+      "timestamp": "2024-12-13T06:53:23.077Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.3,
+      "timestamp": "2024-12-13T06:53:33.077Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.5,
+      "timestamp": "2024-12-13T06:53:43.079Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.4,
+      "timestamp": "2024-12-13T06:53:53.079Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.2,
+      "timestamp": "2024-12-13T06:54:03.079Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65,
+      "timestamp": "2024-12-13T06:54:13.080Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.1,
+      "timestamp": "2024-12-13T06:54:23.081Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59,
+      "timestamp": "2024-12-13T06:54:33.082Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.7,
+      "timestamp": "2024-12-13T06:54:43.083Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71,
+      "timestamp": "2024-12-13T06:54:53.084Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.5,
+      "timestamp": "2024-12-13T06:55:03.084Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.9,
+      "timestamp": "2024-12-13T06:55:13.085Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.5,
+      "timestamp": "2024-12-13T06:55:23.086Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.6,
+      "timestamp": "2024-12-13T06:55:33.086Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.3,
+      "timestamp": "2024-12-13T06:55:43.086Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.6,
+      "timestamp": "2024-12-13T06:55:53.087Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.3,
+      "timestamp": "2024-12-13T06:56:03.088Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.5,
+      "timestamp": "2024-12-13T06:56:13.088Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.2,
+      "timestamp": "2024-12-13T06:56:23.090Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.6,
+      "timestamp": "2024-12-13T06:56:33.090Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.8,
+      "timestamp": "2024-12-13T06:56:43.091Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.7,
+      "timestamp": "2024-12-13T06:56:53.091Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.2,
+      "timestamp": "2024-12-13T06:57:03.091Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.8,
+      "timestamp": "2024-12-13T06:57:13.093Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.5,
+      "timestamp": "2024-12-13T06:57:23.094Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.1,
+      "timestamp": "2024-12-13T06:57:33.095Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.5,
+      "timestamp": "2024-12-13T06:57:43.096Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.9,
+      "timestamp": "2024-12-13T06:57:53.097Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74,
+      "timestamp": "2024-12-13T06:58:03.098Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.3,
+      "timestamp": "2024-12-13T06:58:13.098Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.2,
+      "timestamp": "2024-12-13T06:58:23.099Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.7,
+      "timestamp": "2024-12-13T06:58:33.100Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.4,
+      "timestamp": "2024-12-13T06:58:43.100Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.4,
+      "timestamp": "2024-12-13T06:58:53.100Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.2,
+      "timestamp": "2024-12-13T06:59:03.101Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.6,
+      "timestamp": "2024-12-13T06:59:13.102Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.6,
+      "timestamp": "2024-12-13T06:59:23.103Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61,
+      "timestamp": "2024-12-13T06:59:33.104Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51,
+      "timestamp": "2024-12-13T06:59:43.105Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.1,
+      "timestamp": "2024-12-13T06:59:53.106Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72,
+      "timestamp": "2024-12-13T07:00:03.097Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.1,
+      "timestamp": "2024-12-13T07:00:13.086Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.8,
+      "timestamp": "2024-12-13T07:00:23.080Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.7,
+      "timestamp": "2024-12-13T07:00:33.077Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.8,
+      "timestamp": "2024-12-13T07:00:43.076Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.9,
+      "timestamp": "2024-12-13T07:00:53.075Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.4,
+      "timestamp": "2024-12-13T07:01:03.076Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.6,
+      "timestamp": "2024-12-13T07:01:13.076Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.7,
+      "timestamp": "2024-12-13T07:01:23.077Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.2,
+      "timestamp": "2024-12-13T07:01:33.076Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74,
+      "timestamp": "2024-12-13T07:01:43.076Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.1,
+      "timestamp": "2024-12-13T07:01:53.078Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.5,
+      "timestamp": "2024-12-13T07:02:03.079Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.3,
+      "timestamp": "2024-12-13T07:02:13.080Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67,
+      "timestamp": "2024-12-13T07:02:23.080Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73,
+      "timestamp": "2024-12-13T07:02:33.080Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.9,
+      "timestamp": "2024-12-13T07:02:43.081Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.6,
+      "timestamp": "2024-12-13T07:02:53.082Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.2,
+      "timestamp": "2024-12-13T07:03:03.082Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.9,
+      "timestamp": "2024-12-13T07:03:13.083Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.3,
+      "timestamp": "2024-12-13T07:03:23.085Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55,
+      "timestamp": "2024-12-13T07:03:33.086Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.9,
+      "timestamp": "2024-12-13T07:03:43.087Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.8,
+      "timestamp": "2024-12-13T07:03:53.088Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.5,
+      "timestamp": "2024-12-13T07:04:03.088Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.1,
+      "timestamp": "2024-12-13T07:04:13.089Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.3,
+      "timestamp": "2024-12-13T07:04:23.089Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.8,
+      "timestamp": "2024-12-13T07:04:33.090Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.5,
+      "timestamp": "2024-12-13T07:04:43.091Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54,
+      "timestamp": "2024-12-13T07:04:53.092Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.8,
+      "timestamp": "2024-12-13T07:05:03.093Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.6,
+      "timestamp": "2024-12-13T07:05:13.094Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.1,
+      "timestamp": "2024-12-13T07:05:23.093Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.4,
+      "timestamp": "2024-12-13T07:05:33.093Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.7,
+      "timestamp": "2024-12-13T07:05:43.093Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.8,
+      "timestamp": "2024-12-13T07:05:53.094Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.6,
+      "timestamp": "2024-12-13T07:06:03.095Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.7,
+      "timestamp": "2024-12-13T07:06:13.095Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.6,
+      "timestamp": "2024-12-13T07:06:23.096Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.7,
+      "timestamp": "2024-12-13T07:06:33.097Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.1,
+      "timestamp": "2024-12-13T07:06:43.098Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.4,
+      "timestamp": "2024-12-13T07:06:53.098Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.6,
+      "timestamp": "2024-12-13T07:07:03.099Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.7,
+      "timestamp": "2024-12-13T07:07:13.099Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.9,
+      "timestamp": "2024-12-13T07:07:23.099Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.1,
+      "timestamp": "2024-12-13T07:07:33.100Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.3,
+      "timestamp": "2024-12-13T07:07:43.101Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.3,
+      "timestamp": "2024-12-13T07:07:53.102Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.2,
+      "timestamp": "2024-12-13T07:08:03.103Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T07:08:13.105Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.1,
+      "timestamp": "2024-12-13T07:08:23.105Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.1,
+      "timestamp": "2024-12-13T07:08:33.108Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.9,
+      "timestamp": "2024-12-13T07:08:43.109Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46,
+      "timestamp": "2024-12-13T07:08:53.110Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.7,
+      "timestamp": "2024-12-13T07:09:03.111Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.4,
+      "timestamp": "2024-12-13T07:09:13.112Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.2,
+      "timestamp": "2024-12-13T07:09:23.112Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.1,
+      "timestamp": "2024-12-13T07:09:33.113Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.5,
+      "timestamp": "2024-12-13T07:09:43.114Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.9,
+      "timestamp": "2024-12-13T07:09:53.114Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51,
+      "timestamp": "2024-12-13T07:10:03.115Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.7,
+      "timestamp": "2024-12-13T07:10:13.116Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.4,
+      "timestamp": "2024-12-13T07:10:23.117Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.7,
+      "timestamp": "2024-12-13T07:10:33.118Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54,
+      "timestamp": "2024-12-13T07:10:43.118Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.2,
+      "timestamp": "2024-12-13T07:10:53.119Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.1,
+      "timestamp": "2024-12-13T07:11:03.121Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.1,
+      "timestamp": "2024-12-13T07:11:13.121Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.9,
+      "timestamp": "2024-12-13T07:11:23.122Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.2,
+      "timestamp": "2024-12-13T07:11:33.123Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.7,
+      "timestamp": "2024-12-13T07:11:43.123Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.6,
+      "timestamp": "2024-12-13T07:11:53.125Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.9,
+      "timestamp": "2024-12-13T07:12:03.126Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.4,
+      "timestamp": "2024-12-13T07:12:13.125Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.3,
+      "timestamp": "2024-12-13T07:12:23.125Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.4,
+      "timestamp": "2024-12-13T07:12:33.126Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.5,
+      "timestamp": "2024-12-13T07:12:43.126Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.6,
+      "timestamp": "2024-12-13T07:12:53.127Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.9,
+      "timestamp": "2024-12-13T07:13:03.128Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.9,
+      "timestamp": "2024-12-13T07:13:13.129Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.7,
+      "timestamp": "2024-12-13T07:13:23.130Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.7,
+      "timestamp": "2024-12-13T07:13:33.130Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.3,
+      "timestamp": "2024-12-13T07:13:43.131Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.6,
+      "timestamp": "2024-12-13T07:13:53.131Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.1,
+      "timestamp": "2024-12-13T07:14:03.130Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.7,
+      "timestamp": "2024-12-13T07:14:13.131Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.6,
+      "timestamp": "2024-12-13T07:14:23.131Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.2,
+      "timestamp": "2024-12-13T07:14:33.133Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.1,
+      "timestamp": "2024-12-13T07:14:43.133Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.8,
+      "timestamp": "2024-12-13T07:14:53.134Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.4,
+      "timestamp": "2024-12-13T07:15:03.135Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.3,
+      "timestamp": "2024-12-13T07:15:13.137Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.3,
+      "timestamp": "2024-12-13T07:15:23.138Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 75,
+      "timestamp": "2024-12-13T07:15:33.139Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.9,
+      "timestamp": "2024-12-13T07:15:43.139Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.4,
+      "timestamp": "2024-12-13T07:15:53.139Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.6,
+      "timestamp": "2024-12-13T07:16:03.145Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.2,
+      "timestamp": "2024-12-13T07:16:13.153Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.1,
+      "timestamp": "2024-12-13T07:16:23.158Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.8,
+      "timestamp": "2024-12-13T07:16:33.161Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.8,
+      "timestamp": "2024-12-13T07:16:43.162Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.8,
+      "timestamp": "2024-12-13T07:16:53.164Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.7,
+      "timestamp": "2024-12-13T07:17:03.166Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.7,
+      "timestamp": "2024-12-13T07:17:13.167Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48,
+      "timestamp": "2024-12-13T07:17:23.168Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.3,
+      "timestamp": "2024-12-13T07:17:33.168Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.3,
+      "timestamp": "2024-12-13T07:17:43.168Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56,
+      "timestamp": "2024-12-13T07:17:53.170Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.2,
+      "timestamp": "2024-12-13T07:18:03.171Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.7,
+      "timestamp": "2024-12-13T07:18:13.171Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.5,
+      "timestamp": "2024-12-13T07:18:23.172Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.7,
+      "timestamp": "2024-12-13T07:18:33.173Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.4,
+      "timestamp": "2024-12-13T07:18:43.173Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.6,
+      "timestamp": "2024-12-13T07:18:53.174Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.5,
+      "timestamp": "2024-12-13T07:19:03.176Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.1,
+      "timestamp": "2024-12-13T07:19:13.177Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.3,
+      "timestamp": "2024-12-13T07:19:23.177Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.1,
+      "timestamp": "2024-12-13T07:19:33.177Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.1,
+      "timestamp": "2024-12-13T07:19:43.178Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.5,
+      "timestamp": "2024-12-13T07:19:53.178Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.5,
+      "timestamp": "2024-12-13T07:20:03.180Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.4,
+      "timestamp": "2024-12-13T07:20:13.179Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.6,
+      "timestamp": "2024-12-13T07:20:23.180Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.9,
+      "timestamp": "2024-12-13T07:20:33.181Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.5,
+      "timestamp": "2024-12-13T07:20:43.181Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.1,
+      "timestamp": "2024-12-13T07:20:53.183Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.3,
+      "timestamp": "2024-12-13T07:21:03.182Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.5,
+      "timestamp": "2024-12-13T07:21:13.184Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.3,
+      "timestamp": "2024-12-13T07:21:23.184Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.1,
+      "timestamp": "2024-12-13T07:21:33.185Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.6,
+      "timestamp": "2024-12-13T07:21:43.186Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68,
+      "timestamp": "2024-12-13T07:21:53.187Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.6,
+      "timestamp": "2024-12-13T07:22:03.188Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50,
+      "timestamp": "2024-12-13T07:22:13.190Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T07:22:23.190Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73,
+      "timestamp": "2024-12-13T07:22:33.190Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.4,
+      "timestamp": "2024-12-13T07:22:43.191Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.8,
+      "timestamp": "2024-12-13T07:22:53.191Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.5,
+      "timestamp": "2024-12-13T07:23:03.191Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.3,
+      "timestamp": "2024-12-13T07:23:13.192Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.7,
+      "timestamp": "2024-12-13T07:23:23.193Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.3,
+      "timestamp": "2024-12-13T07:23:33.194Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.5,
+      "timestamp": "2024-12-13T07:23:43.195Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.7,
+      "timestamp": "2024-12-13T07:23:53.196Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.3,
+      "timestamp": "2024-12-13T07:24:03.197Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.9,
+      "timestamp": "2024-12-13T07:24:13.198Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.5,
+      "timestamp": "2024-12-13T07:24:23.199Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.1,
+      "timestamp": "2024-12-13T07:24:33.200Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.8,
+      "timestamp": "2024-12-13T07:24:43.200Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.4,
+      "timestamp": "2024-12-13T07:24:53.201Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.3,
+      "timestamp": "2024-12-13T07:25:03.202Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.6,
+      "timestamp": "2024-12-13T07:25:13.203Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.1,
+      "timestamp": "2024-12-13T07:25:23.203Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.4,
+      "timestamp": "2024-12-13T07:25:33.205Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56,
+      "timestamp": "2024-12-13T07:25:43.206Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.6,
+      "timestamp": "2024-12-13T07:25:53.208Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.8,
+      "timestamp": "2024-12-13T07:26:03.208Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.3,
+      "timestamp": "2024-12-13T07:26:13.209Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69,
+      "timestamp": "2024-12-13T07:26:23.210Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.5,
+      "timestamp": "2024-12-13T07:26:33.211Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.6,
+      "timestamp": "2024-12-13T07:26:43.211Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.4,
+      "timestamp": "2024-12-13T07:26:53.212Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.9,
+      "timestamp": "2024-12-13T07:27:03.213Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.5,
+      "timestamp": "2024-12-13T07:27:13.214Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.4,
+      "timestamp": "2024-12-13T07:27:23.215Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.3,
+      "timestamp": "2024-12-13T07:27:33.216Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.8,
+      "timestamp": "2024-12-13T07:27:43.217Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.2,
+      "timestamp": "2024-12-13T07:27:53.217Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.7,
+      "timestamp": "2024-12-13T07:28:03.217Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.8,
+      "timestamp": "2024-12-13T07:28:13.219Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.8,
+      "timestamp": "2024-12-13T07:28:23.219Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.1,
+      "timestamp": "2024-12-13T07:28:33.219Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.6,
+      "timestamp": "2024-12-13T07:28:43.220Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.7,
+      "timestamp": "2024-12-13T07:28:53.220Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.7,
+      "timestamp": "2024-12-13T07:29:03.222Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.3,
+      "timestamp": "2024-12-13T07:29:13.223Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T07:29:23.223Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.9,
+      "timestamp": "2024-12-13T07:29:33.224Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.5,
+      "timestamp": "2024-12-13T07:29:43.225Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56,
+      "timestamp": "2024-12-13T07:29:53.225Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.1,
+      "timestamp": "2024-12-13T07:30:03.225Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.4,
+      "timestamp": "2024-12-13T07:30:13.225Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.7,
+      "timestamp": "2024-12-13T07:30:23.225Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.4,
+      "timestamp": "2024-12-13T07:30:33.226Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.2,
+      "timestamp": "2024-12-13T07:30:43.228Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.3,
+      "timestamp": "2024-12-13T07:30:53.228Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.3,
+      "timestamp": "2024-12-13T07:32:26.812Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.3,
+      "timestamp": "2024-12-13T07:32:36.813Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.2,
+      "timestamp": "2024-12-13T07:32:46.814Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.6,
+      "timestamp": "2024-12-13T07:33:41.566Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.9,
+      "timestamp": "2024-12-13T07:33:51.568Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.3,
+      "timestamp": "2024-12-13T07:34:01.568Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.8,
+      "timestamp": "2024-12-13T07:34:11.569Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.8,
+      "timestamp": "2024-12-13T07:36:15.456Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.7,
+      "timestamp": "2024-12-13T07:36:25.457Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.2,
+      "timestamp": "2024-12-13T07:36:35.459Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55,
+      "timestamp": "2024-12-13T07:37:16.234Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.3,
+      "timestamp": "2024-12-13T07:37:38.006Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64,
+      "timestamp": "2024-12-13T07:38:05.041Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.7,
+      "timestamp": "2024-12-13T07:38:15.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.2,
+      "timestamp": "2024-12-13T07:38:34.239Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55,
+      "timestamp": "2024-12-13T07:38:44.240Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.5,
+      "timestamp": "2024-12-13T07:38:54.242Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.4,
+      "timestamp": "2024-12-13T07:54:03.607Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.7,
+      "timestamp": "2024-12-13T07:54:13.607Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.1,
+      "timestamp": "2024-12-13T07:54:23.608Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.4,
+      "timestamp": "2024-12-13T07:54:33.608Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.1,
+      "timestamp": "2024-12-13T07:54:43.609Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.2,
+      "timestamp": "2024-12-13T07:54:53.610Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.7,
+      "timestamp": "2024-12-13T07:55:03.610Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 70.2,
+      "timestamp": "2024-12-13T07:55:03.610Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.6,
+      "timestamp": "2024-12-13T07:55:13.610Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 83.6,
+      "timestamp": "2024-12-13T07:55:13.611Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63,
+      "timestamp": "2024-12-13T07:55:23.611Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87.5,
+      "timestamp": "2024-12-13T07:55:23.613Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51,
+      "timestamp": "2024-12-13T07:55:33.612Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 82.8,
+      "timestamp": "2024-12-13T07:55:33.616Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.8,
+      "timestamp": "2024-12-13T07:55:43.612Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87.7,
+      "timestamp": "2024-12-13T07:55:43.615Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.3,
+      "timestamp": "2024-12-13T07:58:11.249Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 78.1,
+      "timestamp": "2024-12-13T07:58:11.251Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.7,
+      "timestamp": "2024-12-13T07:58:21.250Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 93,
+      "timestamp": "2024-12-13T07:58:21.255Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.4,
+      "timestamp": "2024-12-13T07:59:00.876Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 96.5,
+      "timestamp": "2024-12-13T07:59:00.878Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.3,
+      "timestamp": "2024-12-13T07:59:10.876Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 72.9,
+      "timestamp": "2024-12-13T07:59:10.878Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.1,
+      "timestamp": "2024-12-13T08:00:52.257Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 76.1,
+      "timestamp": "2024-12-13T08:00:52.259Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.3,
+      "timestamp": "2024-12-13T08:01:17.202Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 89.4,
+      "timestamp": "2024-12-13T08:01:17.204Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.1,
+      "timestamp": "2024-12-13T08:19:29.593Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 73.4,
+      "timestamp": "2024-12-13T08:19:29.596Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.4,
+      "timestamp": "2024-12-13T08:19:39.710Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 96.8,
+      "timestamp": "2024-12-13T08:19:39.713Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.4,
+      "timestamp": "2024-12-13T08:22:42.826Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 98.4,
+      "timestamp": "2024-12-13T08:22:42.827Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49,
+      "timestamp": "2024-12-13T08:23:37.638Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 94.4,
+      "timestamp": "2024-12-13T08:23:37.640Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.8,
+      "timestamp": "2024-12-13T08:23:47.640Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 65.1,
+      "timestamp": "2024-12-13T08:23:47.644Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.7,
+      "timestamp": "2024-12-13T08:23:59.450Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 82.4,
+      "timestamp": "2024-12-13T08:23:59.452Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.3,
+      "timestamp": "2024-12-13T08:24:09.452Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 80.4,
+      "timestamp": "2024-12-13T08:24:09.455Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.2,
+      "timestamp": "2024-12-13T08:24:29.330Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 95.7,
+      "timestamp": "2024-12-13T08:24:29.333Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T08:31:19.789Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 78.7,
+      "timestamp": "2024-12-13T08:31:19.791Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.5,
+      "timestamp": "2024-12-13T08:31:29.791Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 76.5,
+      "timestamp": "2024-12-13T08:31:29.795Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.4,
+      "timestamp": "2024-12-13T08:33:02.405Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 70.2,
+      "timestamp": "2024-12-13T08:33:02.408Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.7,
+      "timestamp": "2024-12-13T08:33:12.459Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 98.4,
+      "timestamp": "2024-12-13T08:33:12.461Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.8,
+      "timestamp": "2024-12-13T08:41:35.682Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 76.7,
+      "timestamp": "2024-12-13T08:41:35.686Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.4,
+      "timestamp": "2024-12-13T08:41:45.685Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 81.3,
+      "timestamp": "2024-12-13T08:41:45.687Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.3,
+      "timestamp": "2024-12-13T08:41:55.687Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87.3,
+      "timestamp": "2024-12-13T08:41:55.689Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.3,
+      "timestamp": "2024-12-13T08:51:47.036Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 75.6,
+      "timestamp": "2024-12-13T08:51:47.037Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.1,
+      "timestamp": "2024-12-13T09:45:51.151Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 85.5,
+      "timestamp": "2024-12-13T09:45:51.239Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72,
+      "timestamp": "2024-12-13T09:56:46.785Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 86,
+      "timestamp": "2024-12-13T09:56:46.786Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.6,
+      "timestamp": "2024-12-13T09:57:03.230Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 78.2,
+      "timestamp": "2024-12-13T09:57:03.231Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71,
+      "timestamp": "2024-12-13T10:51:06.086Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 93.8,
+      "timestamp": "2024-12-13T10:51:06.089Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.2,
+      "timestamp": "2024-12-13T10:57:48.899Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 74.3,
+      "timestamp": "2024-12-13T10:57:48.902Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.5,
+      "timestamp": "2024-12-13T11:26:57.260Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 92.5,
+      "timestamp": "2024-12-13T11:26:57.262Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.3,
+      "timestamp": "2024-12-13T11:27:23.582Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 71.9,
+      "timestamp": "2024-12-13T11:27:23.583Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.5,
+      "timestamp": "2024-12-13T11:27:33.584Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87,
+      "timestamp": "2024-12-13T11:27:33.586Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.7,
+      "timestamp": "2024-12-13T11:29:08.727Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 94.3,
+      "timestamp": "2024-12-13T11:29:08.729Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51.4,
+      "timestamp": "2024-12-13T11:29:18.730Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 81.8,
+      "timestamp": "2024-12-13T11:29:18.732Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.2,
+      "timestamp": "2024-12-13T12:03:07.104Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 93.2,
+      "timestamp": "2024-12-13T12:03:07.107Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.2,
+      "timestamp": "2024-12-13T12:08:25.003Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 97.6,
+      "timestamp": "2024-12-13T12:08:25.005Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.2,
+      "timestamp": "2024-12-13T12:08:35.007Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 88.4,
+      "timestamp": "2024-12-13T12:08:35.010Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.3,
+      "timestamp": "2024-12-13T12:08:45.008Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T12:08:45.010Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.6,
+      "timestamp": "2024-12-13T12:08:55.010Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 93.5,
+      "timestamp": "2024-12-13T12:08:55.012Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.9,
+      "timestamp": "2024-12-13T12:09:05.011Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 75.9,
+      "timestamp": "2024-12-13T12:09:05.013Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.7,
+      "timestamp": "2024-12-13T12:09:15.013Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 92.3,
+      "timestamp": "2024-12-13T12:09:15.016Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.2,
+      "timestamp": "2024-12-13T12:09:25.013Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 99.3,
+      "timestamp": "2024-12-13T12:09:25.016Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.4,
+      "timestamp": "2024-12-13T12:09:35.015Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 81,
+      "timestamp": "2024-12-13T12:09:35.017Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58,
+      "timestamp": "2024-12-13T12:09:45.016Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 98.6,
+      "timestamp": "2024-12-13T12:09:45.017Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.6,
+      "timestamp": "2024-12-13T12:09:55.017Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 83,
+      "timestamp": "2024-12-13T12:09:55.019Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 62.8,
+      "timestamp": "2024-12-13T12:10:05.018Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 94.2,
+      "timestamp": "2024-12-13T12:10:05.021Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.7,
+      "timestamp": "2024-12-13T12:10:15.019Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 92.3,
+      "timestamp": "2024-12-13T12:10:15.022Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.7,
+      "timestamp": "2024-12-13T12:10:25.021Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 62.1,
+      "timestamp": "2024-12-13T12:10:25.023Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.5,
+      "timestamp": "2024-12-13T12:10:35.021Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 82.4,
+      "timestamp": "2024-12-13T12:10:35.027Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49,
+      "timestamp": "2024-12-13T12:10:45.023Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 76,
+      "timestamp": "2024-12-13T12:10:45.025Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.9,
+      "timestamp": "2024-12-13T12:10:55.024Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 62.7,
+      "timestamp": "2024-12-13T12:10:55.026Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.1,
+      "timestamp": "2024-12-13T12:11:05.025Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 60.9,
+      "timestamp": "2024-12-13T12:11:05.027Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.8,
+      "timestamp": "2024-12-13T12:11:15.027Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 89.2,
+      "timestamp": "2024-12-13T12:11:15.028Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 54.5,
+      "timestamp": "2024-12-13T12:11:25.027Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 95,
+      "timestamp": "2024-12-13T12:11:25.030Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.5,
+      "timestamp": "2024-12-13T12:11:35.029Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 91.6,
+      "timestamp": "2024-12-13T12:11:35.031Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.5,
+      "timestamp": "2024-12-13T12:11:45.029Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 93,
+      "timestamp": "2024-12-13T12:11:45.030Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.1,
+      "timestamp": "2024-12-13T12:11:55.031Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 76.4,
+      "timestamp": "2024-12-13T12:11:55.032Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.7,
+      "timestamp": "2024-12-13T12:12:05.032Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 79.8,
+      "timestamp": "2024-12-13T12:12:05.033Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74,
+      "timestamp": "2024-12-13T12:12:15.033Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 83.6,
+      "timestamp": "2024-12-13T12:12:15.035Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.7,
+      "timestamp": "2024-12-13T12:12:25.034Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 74.2,
+      "timestamp": "2024-12-13T12:12:25.036Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.4,
+      "timestamp": "2024-12-13T12:12:35.035Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 81.8,
+      "timestamp": "2024-12-13T12:12:35.037Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.6,
+      "timestamp": "2024-12-13T12:12:45.036Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87,
+      "timestamp": "2024-12-13T12:12:45.038Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.3,
+      "timestamp": "2024-12-13T12:12:55.037Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 82.7,
+      "timestamp": "2024-12-13T12:12:55.040Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.2,
+      "timestamp": "2024-12-13T12:13:05.039Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 79.8,
+      "timestamp": "2024-12-13T12:13:05.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.2,
+      "timestamp": "2024-12-13T12:13:15.039Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 77.2,
+      "timestamp": "2024-12-13T12:13:15.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.8,
+      "timestamp": "2024-12-13T12:13:25.041Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87.8,
+      "timestamp": "2024-12-13T12:13:25.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.5,
+      "timestamp": "2024-12-13T12:13:35.041Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 88.5,
+      "timestamp": "2024-12-13T12:13:35.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.3,
+      "timestamp": "2024-12-13T12:13:45.042Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 97.9,
+      "timestamp": "2024-12-13T12:13:45.044Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.1,
+      "timestamp": "2024-12-13T12:13:55.043Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 73.5,
+      "timestamp": "2024-12-13T12:13:55.044Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.6,
+      "timestamp": "2024-12-13T12:14:05.045Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 74.3,
+      "timestamp": "2024-12-13T12:14:05.048Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.8,
+      "timestamp": "2024-12-13T12:14:15.046Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 91.8,
+      "timestamp": "2024-12-13T12:14:15.048Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.2,
+      "timestamp": "2024-12-13T12:14:25.047Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 89.1,
+      "timestamp": "2024-12-13T12:14:25.048Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.5,
+      "timestamp": "2024-12-13T12:14:35.048Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 68,
+      "timestamp": "2024-12-13T12:14:35.051Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50,
+      "timestamp": "2024-12-13T12:14:45.050Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 78.7,
+      "timestamp": "2024-12-13T12:14:45.051Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.6,
+      "timestamp": "2024-12-13T12:14:55.051Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 89.6,
+      "timestamp": "2024-12-13T12:14:55.055Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.5,
+      "timestamp": "2024-12-13T12:15:05.053Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 95.8,
+      "timestamp": "2024-12-13T12:15:05.054Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.4,
+      "timestamp": "2024-12-13T12:15:15.053Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 98.5,
+      "timestamp": "2024-12-13T12:15:15.055Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.5,
+      "timestamp": "2024-12-13T12:15:25.055Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 82.3,
+      "timestamp": "2024-12-13T12:15:25.056Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.3,
+      "timestamp": "2024-12-13T12:15:35.055Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 98.2,
+      "timestamp": "2024-12-13T12:15:35.057Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.7,
+      "timestamp": "2024-12-13T12:15:45.056Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 60.8,
+      "timestamp": "2024-12-13T12:15:45.059Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.6,
+      "timestamp": "2024-12-13T12:15:55.057Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 84.9,
+      "timestamp": "2024-12-13T12:15:55.057Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.3,
+      "timestamp": "2024-12-13T12:16:05.058Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 69.6,
+      "timestamp": "2024-12-13T12:16:05.060Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.5,
+      "timestamp": "2024-12-13T12:16:15.059Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 94.1,
+      "timestamp": "2024-12-13T12:16:15.060Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.8,
+      "timestamp": "2024-12-13T12:16:25.060Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 61.2,
+      "timestamp": "2024-12-13T12:16:25.061Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.6,
+      "timestamp": "2024-12-13T12:16:35.062Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 80.4,
+      "timestamp": "2024-12-13T12:16:35.064Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.9,
+      "timestamp": "2024-12-13T12:16:45.062Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 69.4,
+      "timestamp": "2024-12-13T12:16:45.064Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.6,
+      "timestamp": "2024-12-13T12:16:55.064Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 86.1,
+      "timestamp": "2024-12-13T12:16:55.066Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.2,
+      "timestamp": "2024-12-13T12:17:05.065Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 85.4,
+      "timestamp": "2024-12-13T12:17:05.067Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.4,
+      "timestamp": "2024-12-13T12:17:15.067Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 82.2,
+      "timestamp": "2024-12-13T12:17:15.070Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73,
+      "timestamp": "2024-12-13T12:17:25.068Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 98.5,
+      "timestamp": "2024-12-13T12:17:25.070Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.1,
+      "timestamp": "2024-12-13T12:17:35.068Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 95,
+      "timestamp": "2024-12-13T12:17:35.070Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.8,
+      "timestamp": "2024-12-13T12:17:45.069Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 62.4,
+      "timestamp": "2024-12-13T12:17:45.075Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.3,
+      "timestamp": "2024-12-13T12:17:55.071Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 68.3,
+      "timestamp": "2024-12-13T12:17:55.074Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.7,
+      "timestamp": "2024-12-13T12:18:05.073Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 65.1,
+      "timestamp": "2024-12-13T12:18:05.075Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.4,
+      "timestamp": "2024-12-13T12:18:15.073Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 85.6,
+      "timestamp": "2024-12-13T12:18:15.074Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.9,
+      "timestamp": "2024-12-13T12:18:25.075Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 100,
+      "timestamp": "2024-12-13T12:18:25.077Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.9,
+      "timestamp": "2024-12-13T12:18:35.076Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 91.5,
+      "timestamp": "2024-12-13T12:18:35.078Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.7,
+      "timestamp": "2024-12-13T12:18:45.076Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 92.8,
+      "timestamp": "2024-12-13T12:18:45.079Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.8,
+      "timestamp": "2024-12-13T12:18:55.078Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87.6,
+      "timestamp": "2024-12-13T12:18:55.080Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.4,
+      "timestamp": "2024-12-13T12:19:05.080Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 76.9,
+      "timestamp": "2024-12-13T12:19:05.083Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T12:19:15.081Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87.4,
+      "timestamp": "2024-12-13T12:19:15.082Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.2,
+      "timestamp": "2024-12-13T12:19:25.083Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 80.8,
+      "timestamp": "2024-12-13T12:19:25.085Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46,
+      "timestamp": "2024-12-13T12:19:35.083Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 98.2,
+      "timestamp": "2024-12-13T12:19:35.084Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.7,
+      "timestamp": "2024-12-13T12:19:45.085Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 95.3,
+      "timestamp": "2024-12-13T12:19:45.087Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.5,
+      "timestamp": "2024-12-13T12:19:55.086Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 63.5,
+      "timestamp": "2024-12-13T12:19:55.087Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 67.9,
+      "timestamp": "2024-12-13T12:20:05.088Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 88,
+      "timestamp": "2024-12-13T12:20:05.090Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71,
+      "timestamp": "2024-12-13T12:20:15.089Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 86.8,
+      "timestamp": "2024-12-13T12:20:15.090Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.3,
+      "timestamp": "2024-12-13T12:20:25.089Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 80.8,
+      "timestamp": "2024-12-13T12:20:25.094Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.4,
+      "timestamp": "2024-12-13T12:20:35.091Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 63.1,
+      "timestamp": "2024-12-13T12:20:35.095Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.7,
+      "timestamp": "2024-12-13T12:20:45.092Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 69.6,
+      "timestamp": "2024-12-13T12:20:45.094Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.4,
+      "timestamp": "2024-12-13T12:20:55.093Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 69.3,
+      "timestamp": "2024-12-13T12:20:55.097Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.4,
+      "timestamp": "2024-12-13T12:21:05.095Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 81.1,
+      "timestamp": "2024-12-13T12:21:05.095Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.3,
+      "timestamp": "2024-12-13T12:21:15.096Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 67.5,
+      "timestamp": "2024-12-13T12:21:15.099Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.9,
+      "timestamp": "2024-12-13T12:21:25.098Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 81,
+      "timestamp": "2024-12-13T12:21:25.100Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 47.7,
+      "timestamp": "2024-12-13T12:21:35.099Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 86.6,
+      "timestamp": "2024-12-13T12:21:35.102Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.3,
+      "timestamp": "2024-12-13T12:21:45.101Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 74.6,
+      "timestamp": "2024-12-13T12:21:45.103Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.1,
+      "timestamp": "2024-12-13T12:21:55.101Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 80.7,
+      "timestamp": "2024-12-13T12:21:55.104Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 63.9,
+      "timestamp": "2024-12-13T12:22:05.103Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 89.7,
+      "timestamp": "2024-12-13T12:22:05.106Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60.4,
+      "timestamp": "2024-12-13T12:22:15.105Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 73.6,
+      "timestamp": "2024-12-13T12:22:15.107Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.8,
+      "timestamp": "2024-12-13T12:22:25.107Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 77,
+      "timestamp": "2024-12-13T12:22:25.110Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.6,
+      "timestamp": "2024-12-13T12:22:35.107Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 94.5,
+      "timestamp": "2024-12-13T12:22:35.110Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 59.8,
+      "timestamp": "2024-12-13T12:22:45.109Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 68.5,
+      "timestamp": "2024-12-13T12:22:45.111Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 49.4,
+      "timestamp": "2024-12-13T12:22:55.109Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 75.6,
+      "timestamp": "2024-12-13T12:22:55.114Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61.1,
+      "timestamp": "2024-12-13T12:23:05.110Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 88.2,
+      "timestamp": "2024-12-13T12:23:05.114Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.6,
+      "timestamp": "2024-12-13T12:23:15.111Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87.4,
+      "timestamp": "2024-12-13T12:23:15.112Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 48.6,
+      "timestamp": "2024-12-13T12:23:25.113Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 74.7,
+      "timestamp": "2024-12-13T12:23:25.114Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.1,
+      "timestamp": "2024-12-13T12:23:35.114Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 73.7,
+      "timestamp": "2024-12-13T12:23:35.116Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 56.6,
+      "timestamp": "2024-12-13T12:23:45.115Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 95.6,
+      "timestamp": "2024-12-13T12:23:45.118Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.7,
+      "timestamp": "2024-12-13T12:23:55.116Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 69.4,
+      "timestamp": "2024-12-13T12:23:55.118Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 60,
+      "timestamp": "2024-12-13T12:24:05.117Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 84.4,
+      "timestamp": "2024-12-13T12:24:05.119Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.1,
+      "timestamp": "2024-12-13T12:24:15.119Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 66.2,
+      "timestamp": "2024-12-13T12:24:15.120Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74,
+      "timestamp": "2024-12-13T12:24:25.120Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 67.6,
+      "timestamp": "2024-12-13T12:24:25.123Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 53.1,
+      "timestamp": "2024-12-13T12:24:35.121Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 89.1,
+      "timestamp": "2024-12-13T12:24:35.124Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.9,
+      "timestamp": "2024-12-13T12:24:45.123Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 91.6,
+      "timestamp": "2024-12-13T12:24:45.126Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 66.8,
+      "timestamp": "2024-12-13T12:24:55.124Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 79.3,
+      "timestamp": "2024-12-13T12:24:55.129Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.4,
+      "timestamp": "2024-12-13T12:25:05.125Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 90.4,
+      "timestamp": "2024-12-13T12:25:05.129Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.8,
+      "timestamp": "2024-12-13T12:25:15.126Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 98.9,
+      "timestamp": "2024-12-13T12:25:15.129Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 61,
+      "timestamp": "2024-12-13T12:25:25.129Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 67.8,
+      "timestamp": "2024-12-13T12:25:25.133Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 57.7,
+      "timestamp": "2024-12-13T12:25:35.130Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 84.3,
+      "timestamp": "2024-12-13T12:25:35.134Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.3,
+      "timestamp": "2024-12-13T12:25:45.132Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 74.7,
+      "timestamp": "2024-12-13T12:25:45.134Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 55.4,
+      "timestamp": "2024-12-13T12:25:55.132Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 87.4,
+      "timestamp": "2024-12-13T12:25:55.135Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 68.5,
+      "timestamp": "2024-12-13T12:26:05.134Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 65.5,
+      "timestamp": "2024-12-13T12:26:05.137Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 74.5,
+      "timestamp": "2024-12-13T12:26:15.134Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 85.6,
+      "timestamp": "2024-12-13T12:26:15.136Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 71.9,
+      "timestamp": "2024-12-13T12:26:25.134Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 80.9,
+      "timestamp": "2024-12-13T12:26:25.135Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 52.5,
+      "timestamp": "2024-12-13T12:26:35.134Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 78.8,
+      "timestamp": "2024-12-13T12:26:35.138Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 46.4,
+      "timestamp": "2024-12-13T12:26:45.134Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 64.1,
+      "timestamp": "2024-12-13T12:26:45.139Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.9,
+      "timestamp": "2024-12-13T12:26:55.135Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 66.3,
+      "timestamp": "2024-12-13T12:26:55.137Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 58.1,
+      "timestamp": "2024-12-13T12:27:05.136Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 93.9,
+      "timestamp": "2024-12-13T12:27:05.139Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.6,
+      "timestamp": "2024-12-13T12:27:15.137Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 67.7,
+      "timestamp": "2024-12-13T12:27:15.139Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.2,
+      "timestamp": "2024-12-13T12:27:25.139Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 95,
+      "timestamp": "2024-12-13T12:27:25.142Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 69.5,
+      "timestamp": "2024-12-13T12:27:35.140Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 93.9,
+      "timestamp": "2024-12-13T12:27:35.143Z",
+      "actionTaken": false
+    }
+  ]
+}
