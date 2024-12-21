@@ -7,6 +7,10 @@
     {
       "sensorId": "20",
       "threshold": 100
+    },
+    {
+      "sensorId": "23",
+      "threshold": null
     }
   ],
   "actuatorMappings": [
@@ -3883,6 +3887,153 @@
       "waterLevel": 93.9,
       "timestamp": "2024-12-13T12:27:35.143Z",
       "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.3,
+      "timestamp": "2024-12-21T19:44:08.956Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 83.4,
+      "timestamp": "2024-12-21T19:44:08.958Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 51,
+      "timestamp": "2024-12-21T19:44:18.963Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 92.2,
+      "timestamp": "2024-12-21T19:44:18.965Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.7,
+      "timestamp": "2024-12-21T19:44:28.972Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 70.4,
+      "timestamp": "2024-12-21T19:44:28.984Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 73.5,
+      "timestamp": "2024-12-21T19:44:38.972Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 73.1,
+      "timestamp": "2024-12-21T19:44:38.977Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 72.3,
+      "timestamp": "2024-12-21T19:44:48.982Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 91.1,
+      "timestamp": "2024-12-21T19:44:48.988Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.3,
+      "timestamp": "2024-12-21T19:44:58.987Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 81.2,
+      "timestamp": "2024-12-21T19:44:58.992Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 70.4,
+      "timestamp": "2024-12-21T19:45:08.989Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 69.9,
+      "timestamp": "2024-12-21T19:45:08.994Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.3,
+      "timestamp": "2024-12-21T19:45:18.999Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 67.9,
+      "timestamp": "2024-12-21T19:45:19.021Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 64.1,
+      "timestamp": "2024-12-21T19:45:29.005Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 91.7,
+      "timestamp": "2024-12-21T19:45:29.011Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 50.7,
+      "timestamp": "2024-12-21T19:45:39.014Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 94.7,
+      "timestamp": "2024-12-21T19:45:39.017Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 65.1,
+      "timestamp": "2024-12-21T19:45:49.019Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 73.4,
+      "timestamp": "2024-12-21T19:45:49.026Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "sensor1",
+      "waterLevel": 45.7,
+      "timestamp": "2024-12-21T19:45:59.030Z",
+      "actionTaken": false
+    },
+    {
+      "sensorId": "20",
+      "waterLevel": 66.3,
+      "timestamp": "2024-12-21T19:45:59.034Z",
+      "actionTaken": false
     }
-  ]
+  ],
+  "users": [],
+  "sensorData": [],
+  "userConfigurations": []
 }
