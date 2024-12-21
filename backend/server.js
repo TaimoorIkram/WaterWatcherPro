@@ -19,8 +19,6 @@ app.use('/readings', readingRoutes);
 
 const PORT = process.env.PORT || 3001;
 
-// No need to initialize db here anymore since it's handled in config/db.js
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
