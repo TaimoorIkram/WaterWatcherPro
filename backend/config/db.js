@@ -14,7 +14,13 @@ if (!fs.existsSync(dbPath)) {
     User: [],
     Sensor: [],
     HouseholdConfig: [],
-    SensorData: []
+    SensorData: [],
+    Roles: [
+      { id: 1, name: "super_admin" },
+      { id: 2, name: "admin" },
+      { id: 3, name: "customer" },
+      { id: 4, name: "technician" }
+    ]
   };
   fs.writeFileSync(dbPath, JSON.stringify(initialData, null, 2), 'utf-8');
 } else {
