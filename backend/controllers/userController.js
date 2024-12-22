@@ -1,4 +1,5 @@
 const userService = require('../services/userService');
+const jwt = require('jsonwebtoken');
 
 exports.getUsers = (req, res) => {
   try {
@@ -40,3 +41,39 @@ exports.deleteUser = (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.login = async (req, res) => {
+  const JWT_SECRET_KEY = 'iot-jsonwebtoken';
+  const { email, password } = req.body;
+  
+  const user = userService.getUserByEmail(email);
+  
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  }
+  
+  if (user.password !== password) { 
+    return res.status(401).json({ message: 'Invalid credentials' });
+  }
+
+    const token = jwt.sign(
+      { 
+        userId: user.id,
+        email: user.email
+      },
+      JWT_SECRET_KEY,
+      { expiresIn: '24h' }
+    );
+  
+  
+  res.json({ 
+    message: 'Login successful',
+    token,
+    user: {
+      id: user.id,
+      name: user.name,
+      email: user.email
+    }
+  });
+};
+
