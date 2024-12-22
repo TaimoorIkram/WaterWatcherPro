@@ -15,3 +15,8 @@ exports.updateUser = (email, updates) => {
 };
 
 exports.deleteUser = email => db.get('users').remove({ email }).write();
+
+exports.getUserByEmail = email => {
+  const user = db.get('User').find({ email }).value();
+  return user;
+};
