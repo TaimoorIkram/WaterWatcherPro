@@ -1,6 +1,6 @@
 const householdConfigService = require('../services/householdConfigService');
 
-exports.getConfigs = (req, res) => {
+exports.getAllConfigs = (req, res) => {
   try {
     const configs = householdConfigService.getAllConfigs();
     res.json(configs);
@@ -9,15 +9,31 @@ exports.getConfigs = (req, res) => {
   }
 };
 
+exports.getConfigById = (req, res) => {
+  try {
+    const { id } = req.params;
+    const config = householdConfigService.getConfigById(parseInt(id));
+    if (config) {
+      res.json(config);
+    } else {
+      res.status(404).json({ message: 'Configuration not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
 exports.createConfig = (req, res) => {
   try {
-    const { household_id, tank_height, tank_capacity, peak_usage_hours, water_availability_hours } = req.body;
+    const { household_id, tank_height, tank_capacity, peak_usage_hours, min_threshold_normal_hours, min_threshold_peak_hours, water_availability_hours } = req.body;
     const config = householdConfigService.createConfig(
       household_id,
       tank_height,
       tank_capacity,
       peak_usage_hours,
-      water_availability_hours
+      min_threshold_normal_hours,
+      min_threshold_peak_hours,
+      water_availability_hours,
     );
     res.status(201).json(config);
   } catch (error) {
@@ -27,22 +43,25 @@ exports.createConfig = (req, res) => {
 
 exports.updateConfig = (req, res) => {
   try {
-    const { household_id } = req.params;
+    const { id } = req.params;
     const updates = req.body;
-    const config = householdConfigService.updateConfig(household_id, updates);
-    if (config) res.json(config);
-    else res.status(404).json({ message: 'Configuration not found' });
+    const updatedConfig = householdConfigService.updateConfig(parseInt(id), updates);
+    if (updatedConfig) {
+      res.json(updatedConfig);
+    } else {
+      res.status(404).json({ message: 'Configuration not found' });
+    }
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 
 exports.deleteConfig = (req, res) => {
   try {
-    const { household_id } = req.params;
-    householdConfigService.deleteConfig(household_id);
+    const { id } = req.params;
+    householdConfigService.deleteConfig(parseInt(id));
     res.json({ message: 'Configuration deleted' });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
