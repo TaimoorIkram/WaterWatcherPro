@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Card class="shadow-sm">
+    <Card class="shadow-sm card">
       <template #title>
         <h2 class="text-xl font-semibold text-slate-800">User Analytics</h2>
       </template>
@@ -193,5 +193,7 @@ onMounted(fetchUsers);
 </script>
 
 <style scoped>
-/* Add any additional styles */
+.card{
+  margin: 2rem;
+}
 </style>
