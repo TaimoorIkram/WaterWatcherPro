@@ -17,6 +17,7 @@
           <!-- Month Selection -->
           <Dropdown
             :options="monthOptions"
+            optionLabel="label"
             placeholder="Select Month"
             v-model="selectedMonth"
           />

@@ -103,7 +103,7 @@ const getCommunityMotorUsage = async (month) => {
   };
   
 
-const getUserRankings = async (month) => {
+  const getUserRankings = async (month) => {
     const sensorData = db.get('SensorData')
       .filter({ month })
       .value();
@@ -123,25 +123,31 @@ const getUserRankings = async (month) => {
         return;
       }
   
+      const user = db.get('User').find({ id: sensor.household_id }).value();
+      if (!user) {
+        console.error(`User not found for user_id: ${sensor.household_id}`);
+        return;
+      }
+  
       const userId = sensor.household_id; // Assuming household ID is the same as user ID
       const waterUsed = calculateGallonsUsed(entry.water_level, householdConfig.tank_height, householdConfig.tank_capacity);
   
-      if (!userWaterUsage[userId]) {
-        userWaterUsage[userId] = 0;
+      if (!userWaterUsage[user.name]) {
+        userWaterUsage[user.name] = 0;
       }
   
-      userWaterUsage[userId] += waterUsed;
+      userWaterUsage[user.name] += waterUsed;
     });
   
     const sortedUsers = Object.keys(userWaterUsage)
       .sort((a, b) => userWaterUsage[b] - userWaterUsage[a])
-      .map(userId => ({ userId, total: userWaterUsage[userId] }));
+      .map(userName => ({ userName, total: userWaterUsage[userName] }));
   
-    const xAxis = sortedUsers.map(entry => entry.userId);
+    const xAxis = sortedUsers.map(entry => entry.userName);
     const yAxis = sortedUsers.map(entry => entry.total);
   
     return { xAxis, yAxis };
   };
-  
+
 module.exports = { getAverageDailyWaterUsage, getCommunityMotorUsage, getUserRankings };
   

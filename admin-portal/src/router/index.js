@@ -1,6 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import DashboardView from '@/views/Dashboard.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import DashboardView from '@/views/Dashboard.vue';
 import UserAnalyticsView from '@/views/UserAnalytics.vue';
+import CommunityAnalyticsView from '@/views/CommunityAnalytics.vue'; // Add this line
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,11 +12,16 @@ const router = createRouter({
       component: DashboardView
     },
     {
-      path: "/user-analytics", // The path for the page
-      name: "userAnalytics",
-      component: UserAnalyticsView, // The component to load
+      path: '/user-analytics',
+      name: 'userAnalytics',
+      component: UserAnalyticsView
     },
+    {
+      path: '/community-analytics', // Add this route
+      name: 'communityAnalytics',
+      component: CommunityAnalyticsView
+    }
   ]
-})
+});
 
-export default router
+export default router;
