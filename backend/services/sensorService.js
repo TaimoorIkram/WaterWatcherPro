@@ -2,11 +2,15 @@ const db = require('../config/db');
 
 exports.getAllSensors = () => db.get('sensors').value();
 
-exports.addSensor = (sensorId, threshold) => {
-  const existingSensor = db.get('sensors').find({ sensorId }).value();
-  if (existingSensor) throw new Error('Sensor already exists');
-  
-  const newSensor = { sensorId, threshold };
+exports.createSensor = (id, household_id) => {
+  const newSensor = { id, household_id };
   db.get('sensors').push(newSensor).write();
   return newSensor;
 };
+
+exports.updateSensor = (id, updates) => {
+  const sensor = db.get('sensors').find({ id }).assign(updates).write();
+  return sensor || null;
+};
+
+exports.deleteSensor = id => db.get('sensors').remove({ id }).write();
