@@ -18,8 +18,8 @@ app.use(express.json());
 // Routes
 app.use('/sensors', sensorRoutes);
 app.use('/users', userRoutes);
-app.use('/users', householdConfigRoutes);
-app.use('/users', householdRoutes);
+app.use('/configs', householdConfigRoutes);
+app.use('/household', householdRoutes);
 app.use('/readings', readingRoutes);
 app.use('/api/user/analytics', userAnalyticsRoutes);
 
