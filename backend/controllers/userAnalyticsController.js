@@ -1,4 +1,4 @@
-const { getDailyWaterUsage, getMotorUsage } = require('../services/userAnalyticsService');
+const { getAllUsers, getDailyWaterUsage, getMotorUsage } = require('../services/userAnalyticsService');
 
 // Controller for daily water usage
 const getDailyWaterUsageController = async (req, res) => {
@@ -32,4 +32,14 @@ const getMotorUsageController = async (req, res) => {
   }
 };
 
-module.exports = { getDailyWaterUsageController, getMotorUsageController };
+// Controller for daily water usage
+const getAllUsersController = async (req, res) => {
+    try {
+      const data = await getAllUsers();
+      res.json(data);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };
+
+module.exports = { getAllUsersController, getDailyWaterUsageController, getMotorUsageController };

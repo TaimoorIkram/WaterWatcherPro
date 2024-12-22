@@ -92,4 +92,12 @@ const getMotorUsage = async (userId, month) => {
     return { xAxis, peakYAxis, normalYAxis };
   };
 
-module.exports = { getDailyWaterUsage, getMotorUsage };
+
+// Service logic getting All Users
+const getAllUsers = async () => {
+    // Find all Users
+    const users = db.get('User');
+    return { users };
+  };
+
+module.exports = {getAllUsers, getDailyWaterUsage, getMotorUsage };

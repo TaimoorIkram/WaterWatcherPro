@@ -1,8 +1,17 @@
 <template>
-  <RouterView />
+  <div>
+    <Navbar />
+    <router-view />
+  </div>
 </template>
 
+<script setup>
+import Navbar from '@/components/Navbar.vue';
+</script>
+
 <style>
+/* Add any global styles if needed */
+
 html, body {
   margin: 0;
   padding: 0;

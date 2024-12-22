@@ -1,17 +1,21 @@
 <!-- components/ReadingsChart.vue -->
 <template>
-  <Line :data="chartData" :options="chartOptions" />
+  <div class="chart-container">
+    <Line :data="chartData" :options="chartOptions" v-if="chartType === 'line'" />
+    <Bar :data="chartData" :options="chartOptions" v-if="chartType === 'bar'" />
+  </div>
 </template>
 
 <script setup>
 import { computed, watch } from 'vue';
-import { Line } from 'vue-chartjs';
+import { Line, Bar } from 'vue-chartjs';
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
@@ -23,6 +27,7 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
@@ -31,26 +36,29 @@ ChartJS.register(
 
 const props = defineProps({
   readings: {
-    type: Array,
+    type: Object,
     required: true
+  },
+  chartType: {
+    type: String,
+    default: 'line'
+  },
+  xLabel: {
+    type: String,
+    default: 'X Axis'
+  },
+  yLabel: {
+    type: String,
+    default: 'Y Axis'
   }
 });
 
 const chartData = computed(() => ({
-  labels: props.readings.map(r => new Date(r.timestamp).toLocaleTimeString()),
-  datasets: [{
-    label: 'Water Level',
-    data: props.readings.map(r => r.waterLevel),
-    borderColor: 'rgb(59, 130, 246)',
-    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-    fill: true,
-    tension: 0.4,
-    pointRadius: 2,
-    pointHoverRadius: 5
-  }]
+  labels: props.readings.labels || [],
+  datasets: props.readings.datasets || []
 }));
 
-const chartOptions = {
+const chartOptions = computed(() => ({
   responsive: true,
   maintainAspectRatio: false,
   animation: {
@@ -58,7 +66,7 @@ const chartOptions = {
   },
   plugins: {
     legend: {
-      display: false
+      display: true
     },
     tooltip: {
       mode: 'index',
@@ -72,12 +80,20 @@ const chartOptions = {
       },
       ticks: {
         maxRotation: 0
+      },
+      title: {
+        display: true,
+        text: props.xLabel
       }
     },
     y: {
       beginAtZero: true,
       grid: {
         color: 'rgba(0, 0, 0, 0.05)'
+      },
+      title: {
+        display: true,
+        text: props.yLabel
       }
     }
   },
@@ -85,17 +101,25 @@ const chartOptions = {
     intersect: false,
     mode: 'index'
   }
-};
+}));
 
-// Force chart update when data changes
 watch(() => props.readings, () => {
   chartData.value = {
-    ...chartData.value,
-    labels: props.readings.map(r => new Date(r.timestamp).toLocaleTimeString()),
-    datasets: [{
-      ...chartData.value.datasets[0],
-      data: props.readings.map(r => r.waterLevel)
-    }]
+    labels: props.readings.labels || [],
+    datasets: props.readings.datasets || []
   };
 }, { deep: true });
 </script>
+
+<style scoped>
+.chart-container {
+  height: 400px; /* Adjust the height as needed */
+  width: 100%;
+}
+
+canvas {
+  display: block;
+  height: 100% !important;
+  width: 100% !important;
+}
+</style>
