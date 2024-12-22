@@ -1,11 +1,12 @@
 const express = require('express');
 const householdController = require('../controllers/householdController');
+const authenticateToken = require('../middlewares/jwt.middleware');
 
 const router = express.Router();
 
-router.get('/', householdController.getHouseholds);
-router.post('/', householdController.createHousehold);
-router.put('/:id', householdController.updateHousehold);
-router.delete('/:id', householdController.deleteHousehold);
+router.get('/', authenticateToken,householdController.getHouseholds);
+router.post('/', authenticateToken,householdController.createHousehold);
+router.put('/:id', authenticateToken,householdController.updateHousehold);
+router.delete('/:id',authenticateToken, householdController.deleteHousehold);
 
 module.exports = router;
