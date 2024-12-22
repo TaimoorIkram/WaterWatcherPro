@@ -23,24 +23,26 @@ const isWithinTimeRange = (time, range) => {
 
 // Function to create mock data for a specified number of users and populate the database
 const generateMockData = (numUsers) => {
-  // Generate Users
-  const users = [];
+  let sensorIdCounter = 1; // Unique sensor ID for each household
+
+  // Generate Users and Households
   for (let i = 0; i < numUsers; i++) {
-    users.push({
+    const userId = i + 1; // Use `userId` equal to `household.id`
+
+    // Add user to the User table
+    const user = {
+      id: userId, // Ensure user_id matches household.id
       name: faker.person.fullName(),
       email: faker.internet.email(),
       password: faker.internet.password()
-    });
-  }
+    };
+    db.get('User').push(user).write();
 
-  users.forEach((user, index) => {
-    const userId = db.get('User').push(user).write().id;
-    
-    // Create a Household for each User
+    // Create Household for each User
     const household = {
-      id: index + 1,
+      id: userId, // Household ID matches user ID
       location: faker.address.city(),
-      user_id: userId
+      user_id: userId // Link household to user
     };
     db.get('Household').push(household).write();
 
@@ -58,8 +60,8 @@ const generateMockData = (numUsers) => {
     };
     db.get('HouseholdConfig').push(config).write();
 
-    // Create one Sensor for the Household (since each household only has one sensor)
-    const sensor = { id: 1, household_id: household.id };
+    // Assign a unique sensor to the Household
+    const sensor = { id: sensorIdCounter++, household_id: household.id };
     db.get('Sensor').push(sensor).write();
 
     // Generate SensorData for the first 6 months
@@ -67,27 +69,44 @@ const generateMockData = (numUsers) => {
     months.forEach(month => {
       for (let day = 1; day <= 30; day++) { // Generate for 30 days each month
         const sensorData = [];
-        for (let i = 0; i < 3; i++) { // Generate 3 readings per day
+        let motorOnCount = 0;
+        const totalReadings = 3;
+        const targetMotorOn = Math.ceil(totalReadings * 0.1); // 10% motor on
+
+        for (let i = 0; i < totalReadings; i++) {
           const time = generateRandomTime();
-          const waterLevel = config.tank_height - generateRandomReading(0, 0.5); // Generate water level
           const isPeak = isWithinTimeRange(time, config.peak_usage_hours);
           const threshold = isPeak ? config.min_threshold_peak_hours : config.min_threshold_normal_hours;
-          const motorPowerState = waterLevel < (config.tank_height * threshold); // Motor is on if water level is below threshold
+
+          // Determine water level
+          let waterLevel = generateRandomReading(
+            config.tank_height * threshold - 0.1,
+            config.tank_height * threshold + 0.1
+          );
+
+          let motorPowerState = false;
+
+          // Force motor on for some cases
+          if (motorOnCount < targetMotorOn && Math.random() < 0.5) {
+            waterLevel = generateRandomReading(0, config.tank_height * threshold - 0.1);
+            motorPowerState = true;
+            motorOnCount++;
+          }
 
           sensorData.push({
             time,
-            water_level: waterLevel,
+            water_level: parseFloat(waterLevel.toFixed(2)),
             motor_power_state: motorPowerState,
             day,
             month,
             year: 2024,
-            sensor_id: sensor.id
+            sensor_id: sensor.id // Unique sensor ID for this household
           });
         }
         db.get('SensorData').push(...sensorData).write();
       }
     });
-  });
+  }
 
   console.log(`Mock data generated for ${numUsers} users and 6 months!`);
 };
