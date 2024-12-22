@@ -5,6 +5,7 @@ import CommunityAnalyticsView from '@/views/CommunityAnalytics.vue'; // Add this
 import EditHouseholdConfig from '@/views/EditHouseholdConfig.vue';
 import ListHouseholds from '@/views/ListHouseholds.vue';
 import Login from '@/views/Login.vue';
+import TechniciansView from '@/views/Technicians.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
