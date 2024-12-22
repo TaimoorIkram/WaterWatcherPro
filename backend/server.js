@@ -23,7 +23,7 @@ app.use('/users', userRoutes);
 app.use('/configs', householdConfigRoutes);
 app.use('/households', householdRoutes);
 app.use('/readings', readingRoutes);
-app.use('/eval', readingRoutes);
+app.use('/eval', sensorProbeRoutes);
 app.use('/api/user/analytics', userAnalyticsRoutes);
 app.use('/api/community/analytics', communityAnalyticsRoutes);
 
