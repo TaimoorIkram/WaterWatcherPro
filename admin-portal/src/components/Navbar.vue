@@ -1,9 +1,10 @@
 <template>
     <nav class="navbar">
       <ul>
-        <li><router-link to="/">Dashboard</router-link></li>
-        <li><router-link to="/user-analytics">User Analytics</router-link></li>
-        <li><router-link to="/community-analytics">Community Analytics</router-link></li>
+        <li><router-link to="/admin">Dashboard</router-link></li>
+        <li><router-link to="/admin/user-analytics">User Analytics</router-link></li>
+        <li><router-link to="/admin/community-analytics">Community Analytics</router-link></li>
+        <li><router-link to="/admin/technicians">Technicians</router-link></li>
       </ul>
     </nav>
   </template>
