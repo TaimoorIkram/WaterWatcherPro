@@ -25,16 +25,34 @@ const isWithinTimeRange = (time, range) => {
 const generateMockData = (numUsers) => {
   let sensorIdCounter = 1; // Unique sensor ID for each household
 
+
+  const roles = [
+    { id: 1, name: "super_admin" },
+    { id: 2, name: "admin" },
+    { id: 3, name: "customer" },
+    { id: 4, name: "technician" }
+  ];
+
   // Generate Users and Households
   for (let i = 0; i < numUsers; i++) {
     const userId = i + 1; // Use `userId` equal to `household.id`
+
+    let roleId;
+    if (i === 0) {
+      roleId = 1; // First user is super admin
+    } else if (i === 1) {
+      roleId = 4; // Second user is technician
+    } else {
+      roleId = 3; // Rest are customers
+    }
 
     // Add user to the User table
     const user = {
       id: userId, // Ensure user_id matches household.id
       name: faker.person.fullName(),
       email: faker.internet.email(),
-      password: faker.internet.password()
+      password: faker.internet.password(),
+      roleId: roleId // Add roleId to user
     };
     db.get('User').push(user).write();
 
