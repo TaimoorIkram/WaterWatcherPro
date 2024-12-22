@@ -1,4 +1,20 @@
 {
+  "Router": [
+    {
+      "sensor_id": 1,
+      "ssid1": "skibso",
+      "password1": "messing123",
+      "ssid2": "skobs",
+      "password2": "messing123"
+    },
+    {
+      "sensor_id": "",
+      "ssid1": "",
+      "password1": "",
+      "ssid2": "",
+      "password2": ""
+    }
+  ],
   "Household": [
     {
       "id": 1,
@@ -96,17 +112,24 @@
       "tank_height": 1,
       "tank_capacity": 300,
       "peak_usage_hours": "12-15",
-      "water_availability_hours": "12-20"
+      "water_availability_hours": "12-20",
+      "min_threshold_normal_hours": 12,
+      "min_threshold_peak_hours": 15
     },
     {
       "id": 6,
       "household_id": 6,
+      "user_id": "5dd82a87-ad2e-42ce-8218-86f9313ef009",
       "tank_height": 2,
       "tank_capacity": 400,
       "peak_usage_hours": "12-13",
       "water_availability_hours": "12-20",
       "min_threshold_normal_hours": 20,
-      "min_threshold_peak_hours": 10
+      "min_threshold_peak_hours": 10,
+      "max_threshold_normal_hours": 100,
+      "max_threshold_peak_hours": 75,
+      "sensor_id": 1,
+      "actuator_id": 3
     },
     {
       "id": 7,
@@ -14701,5 +14724,5 @@
       "sensor_id": 3
     }
   ],
-  "currentId": 9
+  "currentId": 10
 }

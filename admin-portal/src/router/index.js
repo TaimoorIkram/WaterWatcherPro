@@ -5,6 +5,7 @@ import CommunityAnalyticsView from '@/views/CommunityAnalytics.vue'; // Add this
 import EditHouseholdConfig from '@/views/EditHouseholdConfig.vue';
 import ListHouseholds from '@/views/ListHouseholds.vue';
 import Login from '@/views/Login.vue';
+import WaterLevels from '@/views/WaterLevels.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,7 +26,7 @@ const router = createRouter({
       component: CommunityAnalyticsView
     },
     {
-      path: '/config/:id',
+      path: '/config',
       name: 'config',
       component: EditHouseholdConfig
     },
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/levels',
+      name: 'levels',
+      component: WaterLevels
     },
   ]
 });

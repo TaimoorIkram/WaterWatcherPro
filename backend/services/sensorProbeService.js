@@ -42,10 +42,11 @@ exports.isPeakTime = (currentTime, peakHours) => {
 // Evaluate whether action should be taken
 exports.evaluateAction = (config, sensorData) => {
   const isPeak = exports.isPeakTime(sensorData.time, config.peak_usage_hours);
-  const threshold = isPeak ? config.min_threshold_peak_hours : config.min_threshold_normal_hours;
+  const min_threshold = isPeak ? config.min_threshold_peak_hours : config.min_threshold_normal_hours;
+  const max_threshold = isPeak ? config.max_threshold_peak_hours : config.max_threshold_normal_hours;
 
   // Compare water level with the threshold
-  const takeAction = sensorData.water_level < threshold;
+  const takeAction = sensorData.water_level < min_threshold && sensorData.water_level > max_threshold;
 
   return { take_action: takeAction };
 };
