@@ -3,9 +3,10 @@ const householdConfigController = require('../controllers/householdConfigControl
 
 const router = express.Router();
 
-router.get('/', householdConfigController.getConfigs);
+router.get('/', householdConfigController.getAllConfigs);
+router.get('/:id', householdConfigController.getConfigById);
 router.post('/', householdConfigController.createConfig);
-router.put('/:household_id', householdConfigController.updateConfig);
-router.delete('/:household_id', householdConfigController.deleteConfig);
+router.put('/:id', householdConfigController.updateConfig);
+router.delete('/:id', householdConfigController.deleteConfig);
 
 module.exports = router;

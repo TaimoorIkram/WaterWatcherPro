@@ -7,6 +7,7 @@ const userAnalyticsRoutes = require('./routes/userAnalyticsRoutes');
 const communityAnalyticsRoutes = require('./routes/communityAnalyticsRoutes');
 const householdConfigRoutes = require('./routes/householdConfigRoutes');
 const householdRoutes = require('./routes/householdRoutes');
+const sensorProbeRoutes = require('./routes/sensorProbeRouters');
 const path = require('path');
 const fs = require('fs');
 
@@ -20,8 +21,9 @@ app.use(express.json());
 app.use('/sensors', sensorRoutes);
 app.use('/users', userRoutes);
 app.use('/configs', householdConfigRoutes);
-app.use('/household', householdRoutes);
+app.use('/households', householdRoutes);
 app.use('/readings', readingRoutes);
+app.use('/eval', sensorProbeRoutes);
 app.use('/api/user/analytics', userAnalyticsRoutes);
 app.use('/api/community/analytics', communityAnalyticsRoutes);
 
