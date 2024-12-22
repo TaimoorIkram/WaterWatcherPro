@@ -14,6 +14,13 @@ const generateRandomTime = () => {
   return `${hours}:${minutes}:${seconds}`;
 };
 
+// Function to determine whether a given time falls within a time range
+const isWithinTimeRange = (time, range) => {
+  const [start, end] = range.split('-').map(h => parseInt(h, 10));
+  const hour = parseInt(time.split(':')[0], 10);
+  return hour >= start && hour < end;
+};
+
 // Function to create mock data for a specified number of users and populate the database
 const generateMockData = (numUsers) => {
   // Generate Users
@@ -45,7 +52,9 @@ const generateMockData = (numUsers) => {
       tank_height: tankHeights[Math.floor(Math.random() * tankHeights.length)],
       tank_capacity: tankCapacities[Math.floor(Math.random() * tankCapacities.length)],
       peak_usage_hours: '15-16', // Example of peak usage range
-      water_availability_hours: '5-7' // Example of water availability
+      water_availability_hours: '5-7', // Example of water availability
+      min_threshold_normal_hours: 0.15, // 15% threshold for normal hours
+      min_threshold_peak_hours: 0.25  // 25% threshold for peak hours
     };
     db.get('HouseholdConfig').push(config).write();
 
@@ -57,11 +66,24 @@ const generateMockData = (numUsers) => {
     const months = [1, 2, 3, 4, 5, 6]; // Numeric months (1 to 6)
     months.forEach(month => {
       for (let day = 1; day <= 30; day++) { // Generate for 30 days each month
-        const sensorData = [
-          { time: generateRandomTime(), water_level: config.tank_height - generateRandomReading(0, 0.5), day, month, year: 2024, sensor_id: sensor.id },
-          { time: generateRandomTime(), water_level: config.tank_height - generateRandomReading(0, 0.5), day, month, year: 2024, sensor_id: sensor.id },
-          { time: generateRandomTime(), water_level: config.tank_height - generateRandomReading(0, 0.5), day, month, year: 2024, sensor_id: sensor.id }
-        ];
+        const sensorData = [];
+        for (let i = 0; i < 3; i++) { // Generate 3 readings per day
+          const time = generateRandomTime();
+          const waterLevel = config.tank_height - generateRandomReading(0, 0.5); // Generate water level
+          const isPeak = isWithinTimeRange(time, config.peak_usage_hours);
+          const threshold = isPeak ? config.min_threshold_peak_hours : config.min_threshold_normal_hours;
+          const motorPowerState = waterLevel < (config.tank_height * threshold); // Motor is on if water level is below threshold
+
+          sensorData.push({
+            time,
+            water_level: waterLevel,
+            motor_power_state: motorPowerState,
+            day,
+            month,
+            year: 2024,
+            sensor_id: sensor.id
+          });
+        }
         db.get('SensorData').push(...sensorData).write();
       }
     });

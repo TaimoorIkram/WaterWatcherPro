@@ -3,6 +3,7 @@ const cors = require('cors');
 const sensorRoutes = require('./routes/sensorRoutes');
 const userRoutes = require('./routes/userRoutes');
 const readingRoutes = require('./routes/readingRoutes');
+const userAnalyticsRoutes = require('./routes/userAnalyticsRoutes');
 const path = require('path');
 const fs = require('fs');
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use('/sensors', sensorRoutes);
 app.use('/users', userRoutes);
 app.use('/readings', readingRoutes);
+app.use('/api/user/analytics', userAnalyticsRoutes);
 
 const PORT = process.env.PORT || 3001;
 
