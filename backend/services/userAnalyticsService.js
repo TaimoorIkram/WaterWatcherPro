@@ -1,46 +1,66 @@
 const db = require('../config/db'); // Assuming this is your database access file
 
-// Service logic for daily water usage
+/*
+**********************************************************************************************************************
+Start with the first sensor reading of the month to set your initial water level.
+For each subsequent reading:
+    Compare it with the previous reading to determine if the water level has increased or decreased.
+    If the level decreased, it means water was consumed. Calculate the consumed water and add it to the total usage.
+    If the level increased, it means the tank was refilled and should not be added to the consumption.
+**********************************************************************************************************************
+*/
+
 const getDailyWaterUsage = async (userId, month) => {
-    // Find the household linked to the user
     const household = db.get('Household').find({ user_id: parseInt(userId, 10) }).value();
     if (!household) throw new Error('Household not found for the given user');
   
-    // Find the sensor linked to the household
     const sensor = db.get('Sensor').find({ household_id: household.id }).value();
     if (!sensor) throw new Error('Sensor not found for the given user');
   
-    // Find the configuration for the household
     const config = db.get('HouseholdConfig').find({ household_id: household.id }).value();
     if (!config) throw new Error('Configuration not found for the household');
   
-    // Fetch the sensor data for the given month
     const sensorData = db.get('SensorData')
       .filter({ sensor_id: sensor.id, month })
+      .sortBy('time') // Ensure data is sorted by time
       .value();
   
-    // Calculate daily water usage in gallons
+    if (sensorData.length === 0) return { xAxis: [], yAxis: [] };
+  
     const dailyUsage = {};
     const tankHeightToCapacityRatio = config.tank_capacity / config.tank_height; // Gallons per meter
+    let previousWaterLevel = sensorData[0].water_level;
   
     sensorData.forEach((entry) => {
       const day = entry.day;
+      const currentWaterLevel = entry.water_level;
   
-      // Convert water level to gallons used (assume readings measure usage, not remaining volume)
-      const gallonsUsed = entry.water_level * tankHeightToCapacityRatio;
-      dailyUsage[day] = (dailyUsage[day] || 0) + gallonsUsed;
+      if (currentWaterLevel < previousWaterLevel) {
+        const gallonsUsed = (previousWaterLevel - currentWaterLevel) * tankHeightToCapacityRatio;
+        dailyUsage[day] = (dailyUsage[day] || 0) + gallonsUsed;
+      }
+  
+      previousWaterLevel = currentWaterLevel; // Update previous water level for next comparison
     });
   
-    // Prepare xAxis and yAxis for visualization
     const xAxis = Object.keys(dailyUsage).map(Number);
     const yAxis = Object.values(dailyUsage);
   
     return { xAxis, yAxis };
-  };
+  };  
 
 
+/*
+**********************************************************************************************************************
+For each entry in the sensorData:
+    It extracts the day and hour from the entry.
+    It determines if the motor is on by checking if the water_level is below a threshold value calculated based on the tank
+    height and the corresponding threshold for the given hour (peak or normal hours).
+    If the motor is on during peak hours, the function increments the peak count for that day.
+    If the motor is on during normal hours, it increments the normal count for that day.
+**********************************************************************************************************************
+*/ 
 
-// Service logic for motor usage comparison by day for normal and peak hours
 const getMotorUsage = async (userId, month) => {
     const householdConfig = db.get('HouseholdConfig').find({ household_id: userId }).value();
     if (!householdConfig) throw new Error('Household configuration not found for the given user');
