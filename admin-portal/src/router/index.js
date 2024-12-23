@@ -7,6 +7,7 @@ import ListHouseholds from '@/views/ListHouseholds.vue';
 import Login from '@/views/Login.vue';
 import WaterLevels from '@/views/WaterLevels.vue';
 import TechniciansView from '@/views/Technicians.vue';
+import CreateCustomer from '@/views/CreateCustomer.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,14 +29,13 @@ const router = createRouter({
     },
     {
       path: '/config',
+      name: 'config',
+      component: EditHouseholdConfig,
+    },
+    {
       path: '/admin/technicians',
       name: 'technicians',
       component: TechniciansView
-    },
-    {
-      path: '/config/:id',
-      name: 'config',
-      component: EditHouseholdConfig
     },
     {
       path: '/households/:user_id',
