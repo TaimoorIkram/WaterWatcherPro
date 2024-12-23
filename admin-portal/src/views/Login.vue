@@ -97,11 +97,11 @@
       if (success) {
         const role = userStore.userRole()
         if (role === 1) {
-          router.push('/admin-dashboard')
+          router.push('/admin/user-analytics')
         } else if (role === 2) {
-          router.push('/manager-dashboard')
+          router.push('/admin/user-analytics')
         } else {
-          router.push('/dashboard')
+          router.push('/login')
         }
       } else {
         error.value = loginError || 'Login failed. Please try again.'

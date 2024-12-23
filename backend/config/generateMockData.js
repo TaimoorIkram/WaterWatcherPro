@@ -25,7 +25,6 @@ const isWithinTimeRange = (time, range) => {
 const generateMockData = (numUsers) => {
   let sensorIdCounter = 1; // Unique sensor ID for each household
 
-
   const roles = [
     { id: 1, name: "super_admin" },
     { id: 2, name: "admin" },
@@ -34,13 +33,13 @@ const generateMockData = (numUsers) => {
   ];
 
   // Generate Users and Households
-  for (let i = 0; i < numUsers; i++) {
+  for (let i = 2; i < numUsers + 2; i++) {
     const userId = i + 1; // Use `userId` equal to `household.id`
 
     let roleId;
-    if (i === 0) {
+    if (i === 2) {
       roleId = 1; // First user is super admin
-    } else if (i === 1) {
+    } else if (i === 3) {
       roleId = 4; // Second user is technician
     } else {
       roleId = 3; // Rest are customers
@@ -59,7 +58,7 @@ const generateMockData = (numUsers) => {
     // Create Household for each User
     const household = {
       id: userId, // Household ID matches user ID
-      location: faker.address.city(),
+      location: faker.location.city(), // Updated to faker.location
       user_id: userId // Link household to user
     };
     db.get('Household').push(household).write();
@@ -82,10 +81,17 @@ const generateMockData = (numUsers) => {
     const sensor = { id: sensorIdCounter++, household_id: household.id };
     db.get('Sensor').push(sensor).write();
 
-    // Generate SensorData for the first 6 months
-    const months = [1, 2, 3, 4, 5, 6]; // Numeric months (1 to 6)
+    // Generate SensorData for all months
+    const months = Array.from({ length: 12 }, (_, index) => index + 1); // All 12 months
+
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentDay = currentDate.getDate();
+
     months.forEach(month => {
-      for (let day = 1; day <= 30; day++) { // Generate for 30 days each month
+      const daysInMonth = month === currentMonth ? currentDay : 30; // Up to current date if current month, otherwise 30 days
+
+      for (let day = 1; day <= daysInMonth; day++) {
         const sensorData = [];
         let motorOnCount = 0;
         const totalReadings = 3;
@@ -117,7 +123,7 @@ const generateMockData = (numUsers) => {
             motor_power_state: motorPowerState,
             day,
             month,
-            year: 2024,
+            year: currentDate.getFullYear(),
             sensor_id: sensor.id // Unique sensor ID for this household
           });
         }
@@ -126,7 +132,7 @@ const generateMockData = (numUsers) => {
     });
   }
 
-  console.log(`Mock data generated for ${numUsers} users and 6 months!`);
+  console.log(`Mock data generated for ${numUsers} users and all months!`);
 };
 
 // Run the function with a specified number of users (e.g., 5 users)

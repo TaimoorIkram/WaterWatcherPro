@@ -113,6 +113,33 @@ const getMotorUsage = async (userId, month) => {
   };
 
 
+const getRecentTankLevel = async (userId) => {
+    try {
+      // Find the sensor associated with the household
+      const sensor = db.get('Sensor').find({ household_id: userId }).value();
+      if (!sensor) throw new Error('Sensor not found for the given user');
+  
+      // Fetch the most recent sensor data entry
+      const recentSensorData = db.get('SensorData')
+        .filter({ sensor_id: sensor.id })
+        .sortBy('time')
+        .last()
+        .value();
+  
+      if (!recentSensorData) throw new Error('No sensor data found for the given user');
+  
+      return {
+        time: recentSensorData.time,
+        level: recentSensorData.water_level
+      };
+    } catch (error) {
+      console.error('Error in getRecentTankLevel service:', error);
+      throw error;
+    }
+  };
+
+
+
 // Service logic getting All Users
 const getAllUsers = async () => {
     // Find all Users
@@ -120,4 +147,4 @@ const getAllUsers = async () => {
     return { users };
   };
 
-module.exports = {getAllUsers, getDailyWaterUsage, getMotorUsage };
+module.exports = {getAllUsers, getDailyWaterUsage, getMotorUsage, getRecentTankLevel };

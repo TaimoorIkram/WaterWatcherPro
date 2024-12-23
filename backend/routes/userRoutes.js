@@ -13,6 +13,7 @@ const TECHNICIAN = 4;
 
 
 router.get('/', authorizeRoles(SUPER_ADMIN, ADMIN), userController.getUsers);
+router.get('/technicians', authorizeRoles(SUPER_ADMIN, ADMIN), userController.getTechnicians);
 router.post('/super-admin', authorizeRoles(SUPER_ADMIN), userController.createSuperAdmin);
 router.post('/admin', authorizeRoles(SUPER_ADMIN), userController.createAdmin);
 router.post('/customer', authorizeRoles(SUPER_ADMIN, ADMIN), userController.createCustomer);

@@ -25,35 +25,41 @@
               <i class="pi pi-spin pi-spinner text-blue-500 text-2xl"></i>
             </div>
   
-            <div v-if="!isLoading && averageDailyUsageData.labels.length">
-              <h3 class="text-lg font-semibold">Average Daily Water Usage</h3>
-              <ReadingsChart 
-                :readings="averageDailyUsageData" 
-                chartType="line" 
-                xLabel="Day of the Month" 
-                yLabel="Average Gallons of Water Consumed"
-              />
+            <div v-if="!isLoading && noData">
+              <p class="text-center text-lg text-red-500">No data found for the selected month.</p>
             </div>
   
-            <div v-if="!isLoading && communityMotorUsageData.labels.length">
-              <h3 class="text-lg font-semibold">Community Motor Usage Patterns</h3>
-              <ReadingsChart 
-                :readings="communityMotorUsageData" 
-                chartType="bar" 
-                xLabel="Day of the Month" 
-                yLabel="Number of Times Motor Used (Peak and Normal)"
-              />
-            </div>
+            <div v-if="!isLoading && !noData">
+              <div v-if="averageDailyUsageData.labels.length">
+                <h3 class="text-lg font-semibold">Average Daily Water Usage</h3>
+                <ReadingsChart 
+                  :readings="averageDailyUsageData" 
+                  chartType="line" 
+                  xLabel="Day of the Month" 
+                  yLabel="Average Gallons of Water Consumed"
+                />
+              </div>
   
-            <div v-if="!isLoading && userRankingsData.labels.length">
-              <h3 class="text-lg font-semibold">User Rankings by Water Consumption</h3>
-              <ReadingsChart 
-                :readings="userRankingsData" 
-                chartType="bar" 
-                xLabel="Users" 
-                yLabel="Total Water Consumption (Gallons)"
-                horizontalBar
-              />
+              <div v-if="communityMotorUsageData.labels.length">
+                <h3 class="text-lg font-semibold">Community Motor Usage Patterns</h3>
+                <ReadingsChart 
+                  :readings="communityMotorUsageData" 
+                  chartType="bar" 
+                  xLabel="Day of the Month" 
+                  yLabel="Number of Times Motor Used (Peak and Normal)"
+                />
+              </div>
+  
+              <div v-if="userRankingsData.labels.length">
+                <h3 class="text-lg font-semibold">User Rankings by Water Consumption</h3>
+                <ReadingsChart 
+                  :readings="userRankingsData" 
+                  chartType="bar" 
+                  xLabel="Users" 
+                  yLabel="Total Water Consumption (Gallons)"
+                  horizontalBar
+                />
+              </div>
             </div>
           </div>
         </template>
@@ -63,14 +69,16 @@
   
   <script setup>
   import axios from "axios";
+  import { ref, computed } from "vue";
+  import { useUserStore } from "@/stores/user.store"; // Import the user store
   import Dropdown from "primevue/dropdown";
   import Button from "primevue/button";
   import ReadingsChart from "@/components/ReadingsChart.vue";
   import Card from "primevue/card";
-  import { ref } from "vue";
   
   // Configuring API URL
   const API_URL = import.meta.env.VITE_BACKEND_URL;
+  const userStore = useUserStore(); // Initialize the user store
   
   // Loading and dropdown state
   const isLoading = ref(false);
@@ -96,24 +104,37 @@
   const communityMotorUsageData = ref({ labels: [], datasets: [] });
   const userRankingsData = ref({ labels: [], datasets: [] });
   
+  // Computed property to check if no data is available
+  const noData = computed(() => 
+    !averageDailyUsageData.value.labels.length && 
+    !communityMotorUsageData.value.labels.length && 
+    !userRankingsData.value.labels.length
+  );
+  
   const fetchAnalytics = async () => {
     if (!selectedMonth.value) {
       alert("Please select a month.");
       return;
     }
   
-    const month = selectedMonth.value.value;
-    console.log(month)
+    const month = selectedMonth.value;
   
     try {
       isLoading.value = true;
+      const token = userStore.getAccessToken(); // Get the token from the user store
+      console.log(token)
+  
+      // Set up headers with the token
+      const headers = {
+        Authorization: `Bearer ${token}`
+      };
   
       // Fetch average daily water usage data
       const averageDailyUsageResponse = await axios.get(`${API_URL}/api/community/analytics/average-daily-water-usage`, {
         params: { month },
+        headers // Include headers with the token
       });
-      
-      console.log(averageDailyUsageResponse)
+  
       if (averageDailyUsageResponse.data.xAxis && averageDailyUsageResponse.data.yAxis) {
         averageDailyUsageData.value = {
           labels: averageDailyUsageResponse.data.xAxis,
@@ -134,6 +155,7 @@
       // Fetch community motor usage data
       const communityMotorUsageResponse = await axios.get(`${API_URL}/api/community/analytics/motor-usage`, {
         params: { month },
+        headers // Include headers with the token
       });
   
       if (communityMotorUsageResponse.data.xAxis && communityMotorUsageResponse.data.peakYAxis && communityMotorUsageResponse.data.normalYAxis) {
@@ -163,6 +185,7 @@
       // Fetch user rankings data
       const userRankingsResponse = await axios.get(`${API_URL}/api/community/analytics/user-rankings`, {
         params: { month },
+        headers // Include headers with the token
       });
   
       if (userRankingsResponse.data.xAxis && userRankingsResponse.data.yAxis) {
@@ -192,8 +215,8 @@
   </script>
   
   <style scoped>
-    .card{
+  .card {
     margin: 2rem;
-    }
+  }
   </style>
   

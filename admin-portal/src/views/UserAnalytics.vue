@@ -61,14 +61,16 @@
 
 <script setup>
 import axios from "axios";
+import { ref, onMounted } from "vue";
+import { useUserStore } from "@/stores/user.store"; // Import the user store
 import Dropdown from "primevue/dropdown";
 import Button from "primevue/button";
 import ReadingsChart from "@/components/ReadingsChart.vue";
 import Card from "primevue/card";
-import { ref, onMounted } from "vue";
 
 // Configuring API URL
 const API_URL = import.meta.env.VITE_BACKEND_URL;
+const userStore = useUserStore(); // Initialize the user store
 
 // Loading and dropdown state
 const isLoading = ref(false);
@@ -94,13 +96,18 @@ const selectedMonth = ref(null);
 // Data for charts
 const dailyUsageData = ref({ labels: [], datasets: [] });
 const motorUsageData = ref({ labels: [], datasets: [] });
-const xAxis = ref([]);
-const yAxis = ref([]);
 
 // Fetch users from the API
 const fetchUsers = async () => {
   try {
-    const response = await axios.get(`${API_URL}/api/user/analytics/users`);
+    const token = userStore.getAccessToken(); // Get the token from the user store
+
+    // Set up headers with the token
+    const headers = {
+      Authorization: `Bearer ${token}`
+    };
+
+    const response = await axios.get(`${API_URL}/api/user/analytics/users`, { headers }); // Include headers with the token
     userOptions.value = response.data.users.map((user) => ({
       label: `${user.name} (${user.id})`,
       value: user.id,
@@ -122,11 +129,17 @@ const fetchAnalytics = async () => {
 
     isLoading.value = true;
 
-    const params = { userId, month };
+    const token = userStore.getAccessToken(); // Get the token from the user store
+
+    // Set up headers with the token
+    const headers = {
+      Authorization: `Bearer ${token}`
+    };
 
     // Fetch daily water usage data
     const dailyUsageResponse = await axios.get(`${API_URL}/api/user/analytics/daily-water-usage`, {
       params: { userId, month },
+      headers // Include headers with the token
     });
 
     if (dailyUsageResponse.data.xAxis && dailyUsageResponse.data.yAxis) {
@@ -142,12 +155,6 @@ const fetchAnalytics = async () => {
           }
         ],
       };
-
-      xAxis.value = dailyUsageResponse.data.xAxis;
-      yAxis.value = dailyUsageResponse.data.yAxis;
-
-      console.log(xAxis.value);
-      console.log(yAxis.value);
     } else {
       dailyUsageData.value = { labels: [], datasets: [] };
     }
@@ -155,6 +162,7 @@ const fetchAnalytics = async () => {
     // Fetch motor usage data
     const motorUsageResponse = await axios.get(`${API_URL}/api/user/analytics/motor-usage`, {
       params: { userId, month },
+      headers // Include headers with the token
     });
 
     if (motorUsageResponse.data.xAxis && motorUsageResponse.data.peakYAxis && motorUsageResponse.data.normalYAxis) {
@@ -189,12 +197,11 @@ const fetchAnalytics = async () => {
   }
 };
 
-
 onMounted(fetchUsers);
 </script>
 
 <style scoped>
-.card{
+.card {
   margin: 2rem;
 }
 </style>

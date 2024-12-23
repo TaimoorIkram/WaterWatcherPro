@@ -1,10 +1,22 @@
 const userService = require('../services/userService');
 const jwt = require('jsonwebtoken');
+const db = require('../config/db');
+const { v4: uuid } = require('uuid');
 
 exports.getUsers = (req, res) => {
   try {
     const users = userService.getAllUsers();
     res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+exports.getTechnicians = (req, res) => {
+  try {
+    const users = userService.getAllUsers();
+    const technicians = users.filter(user => user.roleId === 4); // Filter to get only technicians
+    res.json(technicians);
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }
