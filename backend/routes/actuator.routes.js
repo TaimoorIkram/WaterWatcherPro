@@ -11,5 +11,3 @@ router.put('/:id', authenticateToken,sensorController.updateSensor);
 router.delete('/:id',authenticateToken,sensorController.deleteSensor);
 
 module.exports = router;
-
-

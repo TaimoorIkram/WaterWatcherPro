@@ -1,14 +1,18 @@
 const db = require('../config/db');
 
 // Fetch the household configuration by sensor ID
-exports.getHouseholdConfig = (sensor_id) => {
-  const household_id = db.get('Sensor').find({ id: sensor_id }).value().household_id;
-  return db.get('HouseholdConfig').find({ household_id }).value();
+exports.getHouseholdConfig = (actuatorId) => {
+  const household_id = db.get('Devices').find({ deviceId: actuatorId }).value().household_id;
+  console.log(`Fetching household configuration for actuator ID: ${actuatorId}`);
+  console.log(`Household ID: ${household_id}`);
+  const config = db.get('HouseholdConfig').find({ household_id }).value();
+  console.log(`Household configuration: ${JSON.stringify(config)}`);
+  return config;
 };
 
 // Fetch the latest sensor data for a given sensor ID
 exports.getLatestSensorData = (sensor_id) => {
-  const sensorDataList = db.get('SensorData').filter({ sensor_id }).value();
+  const sensorDataList = db.get('SensorData').filter({ deviceId: sensor_id }).value();
   if (!sensorDataList || sensorDataList.length === 0) return null;
     
   // Sort data by year, month, day, and time (descending) to get the latest entry
@@ -45,7 +49,12 @@ exports.evaluateAction = (config, sensorData) => {
   const threshold = isPeak ? config.min_threshold_peak_hours : config.min_threshold_normal_hours;
 
   // Compare water level with the threshold
-  const takeAction = sensorData.water_level < threshold;
+  const takeAction = sensorData.waterLevel < threshold;
+
+  console.log(`Evaluating action for sensor data: ${JSON.stringify(sensorData)}`);
+  console.log(`Peak time: ${isPeak}`);
+  console.log(`Threshold: ${threshold}`);
+  console.log(`Take action: ${takeAction}`);
 
   return { take_action: takeAction };
 };
