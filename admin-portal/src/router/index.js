@@ -6,27 +6,34 @@ import EditHouseholdConfig from '@/views/EditHouseholdConfig.vue';
 import ListHouseholds from '@/views/ListHouseholds.vue';
 import Login from '@/views/Login.vue';
 import WaterLevels from '@/views/WaterLevels.vue';
+import TechniciansView from '@/views/Technicians.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/admin',
       name: 'dashboard',
       component: DashboardView
     },
     {
-      path: '/user-analytics',
+      path: '/admin/user-analytics',
       name: 'userAnalytics',
       component: UserAnalyticsView
     },
     {
-      path: '/community-analytics', // Add this route
+      path: '/admin/community-analytics',
       name: 'communityAnalytics',
       component: CommunityAnalyticsView
     },
     {
       path: '/config',
+      path: '/admin/technicians',
+      name: 'technicians',
+      component: TechniciansView
+    },
+    {
+      path: '/config/:id',
       name: 'config',
       component: EditHouseholdConfig
     },
