@@ -9,6 +9,15 @@ exports.getAllConfigs = (req, res) => {
   }
 };
 
+exports.getUserConfigs = (req, res) => {
+  try {
+    const configs = householdConfigService.getUserConfigs(req.user.userId);
+    res.json(configs);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
 exports.getConfigById = (req, res) => {
   try {
     const { id } = req.params;
@@ -25,14 +34,19 @@ exports.getConfigById = (req, res) => {
 
 exports.createConfig = (req, res) => {
   try {
-    const { household_id, tank_height, tank_capacity, peak_usage_hours, min_threshold_normal_hours, min_threshold_peak_hours, water_availability_hours } = req.body;
+    const { household_id, user_id, sensor_id, actuator_id, tank_height, tank_capacity, peak_usage_hours, min_threshold_normal_hours, min_threshold_peak_hours, max_threshold_normal_hours, max_threshold_peak_hours, water_availability_hours } = req.body;
     const config = householdConfigService.createConfig(
       household_id,
+      user_id,
+      sensor_id,
+      actuator_id,
       tank_height,
       tank_capacity,
       peak_usage_hours,
       min_threshold_normal_hours,
       min_threshold_peak_hours,
+      max_threshold_normal_hours,
+      max_threshold_peak_hours,
       water_availability_hours,
     );
     res.status(201).json(config);

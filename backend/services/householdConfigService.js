@@ -4,6 +4,8 @@ exports.getAllConfigs = () => db.get('HouseholdConfig').value();
 
 exports.getConfigById = id => db.get('HouseholdConfig').find({ household_id: id }).value();
 
+exports.getUserConfigs = id => db.get('HouseholdConfig').find({ user_id: id }).value();
+
 exports.createConfig = (household_id, tank_height, tank_capacity, peak_usage_hours, water_availability_hours, min_threshold_normal_hours, min_threshold_peak_hours) => {
   // Find the current highest ID in the collection
   const lastId = db.get('HouseholdConfig').map('id').max().value() || 0;

@@ -5,8 +5,10 @@ import CommunityAnalyticsView from '@/views/CommunityAnalytics.vue';
 import EditHouseholdConfig from '@/views/EditHouseholdConfig.vue';
 import ListHouseholds from '@/views/ListHouseholds.vue';
 import Login from '@/views/Login.vue';
+import WaterLevels from '@/views/WaterLevels.vue';
 import TechniciansView from '@/views/Technicians.vue';
 import { useUserStore } from '@/stores/user.store'; // Import user store
+import CreateCustomer from '@/views/CreateCustomer.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,15 +32,15 @@ const router = createRouter({
       meta: { requiresAuth: true, requiredRole: 2 }
     },
     {
+      path: '/config',
+      name: 'config',
+      component: EditHouseholdConfig,
+    },
+    {
       path: '/admin/technicians',
       name: 'technicians',
       component: TechniciansView,
       meta: { requiresAuth: true, requiredRole: 2 }
-    },
-    {
-      path: '/config/:id',
-      name: 'config',
-      component: EditHouseholdConfig
     },
     {
       path: '/households/:user_id',
@@ -49,6 +51,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/levels',
+      name: 'levels',
+      component: WaterLevels
     },
   ]
 });
