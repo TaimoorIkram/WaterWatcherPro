@@ -23,8 +23,6 @@ const isWithinTimeRange = (time, range) => {
 
 // Function to create mock data for a specified number of users and populate the database
 const generateMockData = (numUsers) => {
-  let sensorIdCounter = 1; // Unique sensor ID for each household
-
   const roles = [
     { id: 1, name: "super_admin" },
     { id: 2, name: "admin" },
@@ -34,7 +32,7 @@ const generateMockData = (numUsers) => {
 
   // Generate Users and Households
   for (let i = 2; i < numUsers + 2; i++) {
-    const userId = i + 1; // Use `userId` equal to `household.id`
+    const userId = i + 1; // Use `userId` equal to `household.id` and `sensor.id`
 
     let roleId;
     if (i === 2) {
@@ -47,7 +45,7 @@ const generateMockData = (numUsers) => {
 
     // Add user to the User table
     const user = {
-      id: userId, // Ensure user_id matches household.id
+      id: userId, // Ensure user_id matches household.id and sensor.id
       name: faker.person.fullName(),
       email: faker.internet.email(),
       password: faker.internet.password(),
@@ -57,7 +55,7 @@ const generateMockData = (numUsers) => {
 
     // Create Household for each User
     const household = {
-      id: userId, // Household ID matches user ID
+      id: userId, // Household ID matches user ID and sensor ID
       location: faker.location.city(), // Updated to faker.location
       user_id: userId // Link household to user
     };
@@ -78,7 +76,7 @@ const generateMockData = (numUsers) => {
     db.get('HouseholdConfig').push(config).write();
 
     // Assign a unique sensor to the Household
-    const sensor = { id: sensorIdCounter++, household_id: household.id };
+    const sensor = { id: userId, household_id: household.id }; // Sensor ID matches household ID
     db.get('Sensor').push(sensor).write();
 
     // Generate SensorData for all months
@@ -97,7 +95,7 @@ const generateMockData = (numUsers) => {
         const totalReadings = 3;
         const targetMotorOn = Math.ceil(totalReadings * 0.1); // 10% motor on
 
-        for (let i = 0; i < totalReadings; i++) {
+        for (let j = 0; j < totalReadings; j++) {
           const time = generateRandomTime();
           const isPeak = isWithinTimeRange(time, config.peak_usage_hours);
           const threshold = isPeak ? config.min_threshold_peak_hours : config.min_threshold_normal_hours;
@@ -124,7 +122,7 @@ const generateMockData = (numUsers) => {
             day,
             month,
             year: currentDate.getFullYear(),
-            sensor_id: sensor.id // Unique sensor ID for this household
+            sensor_id: sensor.id // Sensor ID matches household ID
           });
         }
         db.get('SensorData').push(...sensorData).write();
