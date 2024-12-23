@@ -4,6 +4,7 @@
         <li><router-link to="/">Dashboard</router-link></li>
         <li><router-link to="/user-analytics">User Analytics</router-link></li>
         <li><router-link to="/community-analytics">Community Analytics</router-link></li>
+        <li><router-link to="/device-activation">Device Activation</router-link></li>
       </ul>
     </nav>
   </template>
