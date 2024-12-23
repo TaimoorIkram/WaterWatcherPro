@@ -53,6 +53,13 @@
       "email": "Nedra74@gmail.com",
       "password": "OXhQolkc2kRCbZx",
       "roleId": 3
+    }, 
+    {
+      "id": "5dd82a87-ad2e-42ce-8218-86f9313ef009",
+      "name": "Timmy G",
+      "email": "timmy@gmail.com",
+      "password": "messing123",
+      "roleId": 3
     }
   ],
   "Sensor": [
@@ -14715,9 +14722,6 @@
       "sensor_id": 3
     }
   ],
-<<<<<<< HEAD
-  "currentId": 10
-=======
   "Roles": [
     {
       "id": 1,
@@ -14735,6 +14739,6 @@
       "id": 4,
       "name": "technician"
     }
-  ]
->>>>>>> 37a4317269eb6bc006a5d1e7c94d1ef135017c62
+  ],
+  "currentId": 10
 }
