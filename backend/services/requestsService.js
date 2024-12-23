@@ -12,6 +12,13 @@ exports.getRequest = (id) => {
     return request;
 };
 
+exports.getAllRequests = (id) => {
+    console.log('Looking for request with device id:', id);
+    const request = db.get('Requests').value();
+    console.log('Found request:', request);
+    return request;
+};
+
 exports.createSensor = (sensor) => {
     db.get('Devices').push(sensor).write();
     return sensor;

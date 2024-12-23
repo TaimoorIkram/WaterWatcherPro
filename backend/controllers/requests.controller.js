@@ -9,12 +9,13 @@ exports.activateDevice = (req, res) => {
     } else {
       res.status(400).json({ message: "secret must be an integer" });
     }
+    const intDeviceId = parseInt(deviceId)
     const nonce = Math.floor(Math.random() * 256);
 
     // Add nonce to the device activation data
     const sensor = requestsService.activateDevice({
       id: Math.floor(Math.random() * 10000),
-      deviceId,
+      deviceId:intDeviceId,
       secret:secretInt,
       type,
       nonce,
@@ -22,6 +23,16 @@ exports.activateDevice = (req, res) => {
     });
 
     res.status(201).json(sensor);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+exports.getAllRequests = (req, res) => {
+  try {
+    const requests = requestsService.getAllRequests();
+    res.status(201).json(requests);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

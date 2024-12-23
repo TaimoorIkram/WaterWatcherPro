@@ -5,9 +5,10 @@ const requestsController = require('../controllers/requests.controller');
 const router = express.Router();
 
 //TODO: only allow admin or technician to activate device - also move to a separate route
-router.post('/activate-device', authenticateToken, requestsController.activateDevice);
-router.get('/device-nonce/:id', authenticateToken, requestsController.getDeviceNonce);
+router.post('/activate-device', requestsController.activateDevice);
+router.get('/device-nonce/:id', requestsController.getDeviceNonce);
 router.post('/verify', requestsController.verifyAndCreateDevice);
+router.get('/', requestsController.getAllRequests);
 
 module.exports = router;
 

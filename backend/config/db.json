@@ -1,7 +1,5 @@
 {
-  "Household": [
-    
-  ],
+  "Household": [],
   "Requests": [
     {
       "id": 8756,
@@ -18,6 +16,54 @@
       "type": "ACTUATOR",
       "nonce": 215,
       "activated": true
+    },
+    {
+      "id": 1692,
+      "deviceId": 3,
+      "secret": 12,
+      "type": "SENSOR",
+      "nonce": 239,
+      "activated": true
+    },
+    {
+      "id": 7548,
+      "deviceId": 4,
+      "secret": 15,
+      "type": "ACTUATOR",
+      "nonce": 18,
+      "activated": true
+    },
+    {
+      "id": 6860,
+      "deviceId": "8",
+      "secret": 1234,
+      "type": "SENSOR",
+      "nonce": 253,
+      "activated": false
+    },
+    {
+      "id": 7463,
+      "deviceId": "14",
+      "secret": 1456,
+      "type": "SENSOR",
+      "nonce": 251,
+      "activated": false
+    },
+    {
+      "id": 457,
+      "deviceId": 20,
+      "secret": 1,
+      "type": "SENSOR",
+      "nonce": 21,
+      "activated": true
+    },
+    {
+      "id": 1564,
+      "deviceId": 22,
+      "secret": 1,
+      "type": "SENSOR",
+      "nonce": 101,
+      "activated": false
     }
   ],
   "User": [],
@@ -37,6 +83,30 @@
       "status": "active",
       "household_id": 6,
       "createdAt": "2024-12-23T00:49:55.216Z"
+    },
+    {
+      "deviceId": 3,
+      "type": "SENSOR",
+      "authToken": "93354859",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-23T02:15:08.133Z"
+    },
+    {
+      "deviceId": 20,
+      "type": "SENSOR",
+      "authToken": "27604168",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-23T02:19:40.729Z"
+    },
+    {
+      "deviceId": 4,
+      "type": "ACTUATOR",
+      "authToken": "97199375",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-23T02:24:36.594Z"
     }
   ],
   "HouseholdConfig": [
@@ -61,6 +131,16 @@
       "deviceId": 1,
       "waterLevel": 44.124,
       "timestamp": "2024-12-23T00:12:23.402Z"
+    },
+    {
+      "deviceId": 20,
+      "waterLevel": null,
+      "timestamp": "2024-12-23T02:22:25.895Z"
+    },
+    {
+      "deviceId": 20,
+      "waterLevel": null,
+      "timestamp": "2024-12-23T02:22:59.524Z"
     }
   ],
   "ActuatorData": [
@@ -87,6 +167,12 @@
       "motor_status": "ON",
       "take_action": false,
       "timestamp": "2024-12-23T01:05:08.369Z"
+    },
+    {
+      "deviceId": 4,
+      "motor_status": "ON",
+      "take_action": false,
+      "timestamp": "2024-12-23T02:25:02.600Z"
     }
   ]
 }
