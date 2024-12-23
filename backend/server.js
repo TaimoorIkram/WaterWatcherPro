@@ -9,8 +9,11 @@ const householdConfigRoutes = require('./routes/householdConfigRoutes');
 const householdRoutes = require('./routes/householdRoutes');
 const sensorProbeRoutes = require('./routes/sensorProbeRouters');
 const requestRoutes = require('./routes/requests.routes');
+const routerConfigRoutes = require('./routes/routerConfigRoutes');
 const path = require('path');
 const fs = require('fs');
+const jwt = require('jsonwebtoken');
+const JWT_SECRET_KEY = 'iot-jsonwebtoken';
 
 const app = express();
 
@@ -25,6 +28,7 @@ app.use('/configs', householdConfigRoutes);
 app.use('/households', householdRoutes);
 app.use('/readings', readingRoutes);
 app.use('/eval', sensorProbeRoutes);
+app.use('/routerconfigs', routerConfigRoutes);
 app.use('/api/user/analytics', userAnalyticsRoutes);
 app.use('/api/community/analytics', communityAnalyticsRoutes);
 app.use('/requests', requestRoutes);

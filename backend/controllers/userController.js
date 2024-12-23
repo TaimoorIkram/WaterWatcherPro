@@ -1,5 +1,7 @@
 const userService = require('../services/userService');
 const jwt = require('jsonwebtoken');
+const db = require('../config/db');
+const { v4: uuid } = require('uuid');
 
 exports.getUsers = (req, res) => {
   try {
@@ -10,14 +12,67 @@ exports.getUsers = (req, res) => {
   }
 };
 
-exports.createUser = (req, res) => {
+exports.getTechnicians = (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    const user = userService.createUser(name, email, password);
-    res.status(201).json(user);
+    const users = userService.getAllUsers();
+    const technicians = users.filter(user => user.roleId === 4); // Filter to get only technicians
+    res.json(technicians);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: 'Internal server error' });
   }
+};
+
+exports.createUser = async (req, res) => {
+  try {
+    const { name, email, password, roleId } = req.body;
+    
+    const existingUser = db.get('User').find({ email }).value();
+    if (existingUser) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    const newUser = { 
+      id: uuid(), 
+      name, 
+      email, 
+      password,
+      roleId 
+    };
+
+    db.get('User').push(newUser).write();
+
+    res.status(201).json({
+      message: 'User created successfully',
+      user: {
+        id: newUser.id,
+        name: newUser.name,
+        email: newUser.email,
+        roleId: newUser.roleId
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Error creating user' });
+  }
+};
+
+exports.createSuperAdmin = async (req, res) => {
+  req.body.roleId = 1;
+  return exports.createUser(req, res);
+};
+
+exports.createAdmin = async (req, res) => {
+  req.body.roleId = 2;
+  return exports.createUser(req, res);
+};
+
+exports.createCustomer = async (req, res) => {
+  req.body.roleId = 3;
+  return exports.createUser(req, res);
+};
+
+exports.createTechnician = async (req, res) => {
+  req.body.roleId = 4;
+  return exports.createUser(req, res);
 };
 
 exports.updateUser = (req, res) => {
@@ -59,7 +114,8 @@ exports.login = async (req, res) => {
     const token = jwt.sign(
       { 
         userId: user.id,
-        email: user.email
+        email: user.email,
+        roleId:user.roleId
       },
       JWT_SECRET_KEY,
       { expiresIn: '24h' }
@@ -72,7 +128,8 @@ exports.login = async (req, res) => {
     user: {
       id: user.id,
       name: user.name,
-      email: user.email
+      email: user.email,
+      roleId:user.roleId
     }
   });
 };

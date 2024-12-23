@@ -32,6 +32,7 @@ const getMotorUsageController = async (req, res) => {
   }
 };
 
+
 // Controller for daily water usage
 const getAllUsersController = async (req, res) => {
     try {

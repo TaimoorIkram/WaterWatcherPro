@@ -5,6 +5,8 @@
         <li><router-link to="/user-analytics">User Analytics</router-link></li>
         <li><router-link to="/community-analytics">Community Analytics</router-link></li>
         <li><router-link to="/device-activation">Device Activation</router-link></li>
+        <!-- <li><router-link to="/admin/dashboard">Dashboard</router-link></li> -->
+        <li><router-link to="/admin/technicians">Technicians</router-link></li>
       </ul>
     </nav>
   </template>
