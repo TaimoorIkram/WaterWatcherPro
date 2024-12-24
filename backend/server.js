@@ -27,57 +27,54 @@ app.use(express.json());
 
 // MQTT Client Setup
 const mqttOptions = {
-  host: 'mqtt.preprod.retailos.cowlar.com',
-  port: 443,
-  username: 'cdspreprodecommerce',
-  password: 'fnc9CWKcHy1ss02'    ,
-  endpoint: "/mqtt",
-  clean: true,
-  connectTimeout: 4000,
-  reconnectPeriod: 4000,
-  ssl: true,
+  host: '10.7.233.71',       // MQTT Broker IP
+  port: 1883,                // Default MQTT port
+  username: 'server',        // MQTT username
+  password: 'server123',     // MQTT password
+  clean: true,               // Clean session
+  connectTimeout: 4000,      // Connection timeout in ms
+  reconnectPeriod: 4000,     // Reconnection period in ms
 };
 
-const protocol = mqttOptions.ssl ? 'wss' : 'ws';
-const mqttBrokerUrl = `${protocol}://${mqttOptions.host}:${mqttOptions.port}${mqttOptions.endpoint}`;
+// Construct MQTT Broker URL
+const mqttBrokerUrl = `mqtt://${mqttOptions.host}:${mqttOptions.port}`;
+
+// Initialize MQTT client
 const mqttClient = mqtt.connect(mqttBrokerUrl, mqttOptions);
 
 // Handle MQTT Events
 mqttClient.on('connect', () => {
-    console.log('Connected to MQTT Broker');
+  console.log('Connected to MQTT Broker');
 
-    // Subscribe to topics
-    mqttClient.subscribe('sensors/data/AR', (err) => {
-        if (!err) {
-            console.log('Subscribed to sensors/data/AR');
-        } else {
-            console.error('Error subscribing to sensors/data:', err);
-        }
-    });
-
-    mqttClient.subscribe('alerts/notifications', (err) => {
-        if (!err) {
-            console.log('Subscribed to alerts/notifications');
-        } else {
-            console.error('Error subscribing to alerts/notifications:', err);
-        }
-    });
+  // Subscribe to the "dev/waterlevel" topic
+  mqttClient.subscribe('dev/waterlevel', (err) => {
+    if (!err) {
+      console.log('Subscribed to dev/waterlevel');
+    } else {
+      console.error('Error subscribing to dev/waterlevel:', err);
+    }
+  });
 });
 
 mqttClient.on('message', (topic, message) => {
-    // Handle incoming messages here based on the topic
-    if (topic === 'sensors/data/AR') {
-        // Process sensor data
-        const sensorData = JSON.parse(message.toString());
-        console.log('Received sensor data:', sensorData);
-        // TODO: save to db and perform actions based on sensor data
-    }
-
-    if (topic === 'alerts/notifications') {
-        // Process alert notifications
-        console.log('Received alert notification:', message.toString());
-    }
+  // Handle incoming messages
+  if (topic === 'dev/waterlevel') {
+    const waterLevelData = message.toString(); // Decode message as string
+    console.log('Received water level data:', waterLevelData);
+    // TODO: Process and save the data or trigger actions
+  }
 });
+
+// Error handling
+mqttClient.on('error', (err) => {
+  console.error('MQTT Client Error:', err);
+});
+
+// Reconnection handling
+mqttClient.on('reconnect', () => {
+  console.log('Reconnecting to MQTT Broker...');
+});
+
 
 mqttClient.on('error', (error) => {
     console.error('MQTT Client Error:', error);
