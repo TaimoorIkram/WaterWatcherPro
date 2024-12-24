@@ -63,7 +63,8 @@ const router = createRouter({
 // Route guard for authentication and authorization
 router.beforeEach((to, from, next) => {
   const userStore = useUserStore();
-  
+  userStore.initializeStore(); // Ensure store initialization
+
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!userStore.isAuthenticated()) {
       next({ name: 'login' });

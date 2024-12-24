@@ -1,10 +1,9 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { jwtDecode } from "jwt-decode";
-import axios from "axios";
-
+import axios from "axios"; // Note: Imported `axios` correctly
 
 const API_URL = "http://localhost:3001";
+
 export const useUserStore = defineStore(
   "user",
   () => {
@@ -30,14 +29,13 @@ export const useUserStore = defineStore(
     const setAccessToken = (token) => {
       accessToken.value = token;
       if (token) {
-        // const decodedToken = jwtDecode(token)
         localStorage.setItem("accessToken", token);
       }
     };
 
     const getAccessToken = () => {
       return accessToken.value || localStorage.getItem("accessToken");
-    }
+    };
 
     const setRefreshToken = (token) => {
       refreshToken.value = token;
@@ -52,6 +50,10 @@ export const useUserStore = defineStore(
       accessToken.value = null;
       refreshToken.value = null;
       emailToVerify.value = null;
+      localStorage.removeItem("user");
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
+      localStorage.removeItem("emailToVerify");
     };
 
     const login = async (email, password) => {
@@ -83,6 +85,26 @@ export const useUserStore = defineStore(
       removeUserData();
     };
 
+    const initializeStore = () => {
+      const storedUser = localStorage.getItem("user");
+      const storedAccessToken = localStorage.getItem("accessToken");
+      const storedRefreshToken = localStorage.getItem("refreshToken");
+      const storedEmailToVerify = localStorage.getItem("emailToVerify");
+
+      if (storedUser) {
+        user.value = JSON.parse(storedUser);
+      }
+      if (storedAccessToken) {
+        accessToken.value = storedAccessToken;
+      }
+      if (storedRefreshToken) {
+        refreshToken.value = storedRefreshToken;
+      }
+      if (storedEmailToVerify) {
+        emailToVerify.value = storedEmailToVerify;
+      }
+    };
+
     // Getters
     const isAuthenticated = () => !!accessToken.value;
     const userRole = () => user.value?.roleId || null;
@@ -102,6 +124,7 @@ export const useUserStore = defineStore(
       removeUserData,
       login,
       logout,
+      initializeStore,
 
       // Getters
       isAuthenticated,

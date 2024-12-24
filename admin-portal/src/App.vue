@@ -10,7 +10,7 @@ import Navbar from '@/components/Navbar.vue';
 </script>
 
 <style>
-/* Add any global styles if needed */
+/* Add any global styles if needed okokok*/
 
 html, body {
   margin: 0;
