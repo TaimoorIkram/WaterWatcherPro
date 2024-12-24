@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/', readingController.getReadings);
 router.post('/sensor', readingController.postReading);
 router.post('/actuator', readingController.postActuatorReading);
+router.get('/latest', readingController.getLatest);
 // router.post('/sensor', readingController.postReading);
 // acturots
 // deviceId, token, value, 
