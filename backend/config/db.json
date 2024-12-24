@@ -37,6 +37,13 @@
       "email": "Donna_Rodriguez60@yahoo.com",
       "password": "IZpLAQoVw2npSu9",
       "roleId": 3
+    },
+    {
+      "id": "537ab987-c05e-4f3f-8e44-2faf37fd2012",
+      "name": "Ahsan",
+      "email": "ahsan@gmail.com",
+      "password": "ahsan",
+      "roleId": 4
     }
   ],
   "Sensor": [
