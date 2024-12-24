@@ -21,9 +21,9 @@ if (!fs.existsSync(dbPath)) {
       { id: 4, name: "technician" }
     ],
     Requests:[],
+    RequestNonce:[],
     Devices: [],
     SensorData: [],
-    Nounces:[],
   };
   fs.writeFileSync(dbPath, JSON.stringify(initialData, null, 2), "utf-8");
 } else {

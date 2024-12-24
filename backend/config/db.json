@@ -33,8 +33,51 @@
       "name": "technician"
     }
   ],
-  "Requests": [],
-  "Devices": [],
-  "SensorData": [],
-  "Nounces": []
+  "Requests": [
+    {
+      "id": 1903,
+      "deviceId": 69,
+      "secret": 1,
+      "type": "SENSOR",
+      "nonce": 158,
+      "activated": true
+    },
+    {
+      "id": 7881,
+      "deviceId": 420,
+      "secret": 1,
+      "type": "SENSOR",
+      "nonce": 243,
+      "activated": true
+    }
+  ],
+  "RequestNonce": [
+    {
+      "id": 69,
+      "nonce": 204
+    },
+    {
+      "id": 420,
+      "nonce": 108
+    }
+  ],
+  "Devices": [
+    {
+      "deviceId": 69,
+      "type": "SENSOR",
+      "authToken": "77417161",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-24T14:14:32.058Z"
+    },
+    {
+      "deviceId": 420,
+      "type": "SENSOR",
+      "authToken": "28582897",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-24T14:55:26.381Z"
+    }
+  ],
+  "SensorData": []
 }

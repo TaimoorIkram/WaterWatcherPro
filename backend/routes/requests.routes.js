@@ -5,10 +5,13 @@ const requestsController = require('../controllers/requests.controller');
 const router = express.Router();
 
 //TODO: only allow admin or technician to activate device - also move to a separate route
+router.get('/', requestsController.getAllRequests);
 router.post('/activate-device', requestsController.activateDevice);
+
+// used by esp32
 router.get('/device-nonce/:id', requestsController.getDeviceNonce);
 router.post('/verify', requestsController.verifyAndCreateDevice);
-router.get('/', requestsController.getAllRequests);
+router.get('/mqtt-creds', requestsController.getMQTTCreds);
 
 module.exports = router;
 
