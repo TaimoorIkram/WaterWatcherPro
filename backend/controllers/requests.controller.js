@@ -78,11 +78,13 @@ exports.verifyAndCreateDevice = (req, res) => {
         };
 
         requestsService.createSensor(sensor);
+        const nonce = requestsService.createSensorRequestNonce(deviceId);
         requestsService.updateRequestStatus(deviceId);
 
         res.status(201).json({
             message: "Device verified and activated successfully",
-            authToken
+            authToken,
+            nonce
         });
 
     } catch (error) {
@@ -104,4 +106,45 @@ exports.getDeviceNonce = (req, res) => {
   }
 };
 
+const verifyTempAuthToken = (deviceId, tempAuthToken) => {
+  const device = requestsService.getDeviceById(deviceId);
+  if (device) {
+    const nonce = requestsService.getNonceByDeviceId(deviceId);
+    const requestAuthToken = tempAuthToken - nonce.nonce;
+    const authToken = parseInt(device.authToken);
+    if (requestAuthToken == authToken) {
+      return {verified: true}
+    }
+    else{
+      return {verified: false, reason: "Bad Nonce"}
+    }
+  }
+  else {
+    return {verified: false, reason: "Device not found."}
+  }
+}
 
+exports.getMQTTCreds = (req, res) => {
+  try {
+    const deviceId = parseInt(req.get('DevID'));    
+    const tempAuthToken = parseInt(req.get('TAuthToken'));    
+    const isAuthTokenVerified = verifyTempAuthToken(deviceId, tempAuthToken);    
+
+    if (isAuthTokenVerified.verified) {
+      res.status(201).json({
+        username: "sensor",
+        password: "sensor123"
+      });
+    }
+    else {
+      console.log('NIGGAS');
+      res.status(403).json({
+        reason: isAuthTokenVerified.reason,
+        token: tempAuthToken
+      })
+    }
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};

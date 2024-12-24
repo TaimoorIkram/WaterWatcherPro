@@ -48,6 +48,10 @@ if (!fs.existsSync(dbPath)) {
     Nounces:[
       {"deviceId": 123, "nounce":10}
     ],
+    Requests:[],
+    RequestNonce:[],
+    Devices: [],
+    SensorData: [],
   };
   fs.writeFileSync(dbPath, JSON.stringify(initialData, null, 2), "utf-8");
 } else {

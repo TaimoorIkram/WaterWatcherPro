@@ -1,5 +1,7 @@
 const db = require('../config/db');
 
+exports.getDeviceById = (deviceId) => db.get('Devices').find({ deviceId }).value()
+
 exports.activateDevice = (newRequest) => {
     db.get('Requests').push(newRequest).write();
     return newRequest;
@@ -31,6 +33,18 @@ exports.updateRequestStatus = (deviceId) => {
         .write();
     return updatedRequest;
 };
+
+exports.createSensorRequestNonce = (deviceId) => {
+    const nonce = Math.floor(Math.random() * 256);
+
+    db.get('RequestNonce').push({id: deviceId, nonce: nonce}).write();
+    return nonce
+}
+
+exports.getNonceByDeviceId = (deviceId) => {
+    const nonce = db.get('RequestNonce').find({ id: deviceId }).value()
+    return nonce
+}
 
 
   

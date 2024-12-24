@@ -27,6 +27,7 @@
           stripedRows
           responsiveLayout="scroll"
           class="p-4"
+          class="p-4"
         >
           <!-- Timestamp Column -->
           <Column field="createdAt" header="Timestamp" sortable>
@@ -39,6 +40,13 @@
           <Column field="water_level" header="Water Level" sortable>
             <template #body="slotProps">
               <div class="flex items-center">
+                <i :class="[
+                  'pi mr-2',
+                  slotProps.data.water_level < 0.05 ? 'pi-arrow-down text-red-500' :
+                  slotProps.data.water_level < 0.1 ? 'pi-arrow-right text-yellow-500' :
+                  'pi-arrow-up text-green-500'
+                ]"></i>
+                {{ slotProps.data.water_level.toFixed(2) }} m
                 <i :class="[
                   'pi mr-2',
                   slotProps.data.water_level < 0.05 ? 'pi-arrow-down text-red-500' :
@@ -124,7 +132,7 @@ const fetchReadings = async () => {
   } catch (error) {
     console.error('Error fetching readings:', error);
   } finally {
-    isLoading.value = false;
+    isLoading.value = false
   }
 };
 
@@ -135,23 +143,35 @@ onMounted(() => {
 
 <style scoped>
 :deep(.p-datatable) {
+<style scoped>
+:deep(.p-datatable) {
   border-radius: 0.5rem;
 }
 
 :deep(.p-card) {
   border-radius: 1rem;
+:deep(.p-card) {
+  border-radius: 1rem;
 }
 
 :deep(.p-column-title) {
+:deep(.p-column-title) {
   font-weight: 600;
+  color: #475569;
   color: #475569;
 }
 
 :deep(.p-paginator) {
   padding: 1rem;
+:deep(.p-paginator) {
+  padding: 1rem;
   background-color: #f8fafc;
 }
 
+:deep(.p-datatable-header) {
+  background: #f8fafc;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 :deep(.p-datatable-header) {
   background: #f8fafc;
   border-top-left-radius: 0.5rem;

@@ -68,6 +68,8 @@ mqttClient.on('message', (topic, message) => {
   else{
     console.log(topic)
     console.log(message.toString())
+    console.log('Received water level data:', waterLevelData);
+    // TODO: Process and save the data or trigger actions
   }
 });
 
