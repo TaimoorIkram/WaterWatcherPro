@@ -20,10 +20,34 @@ if (!fs.existsSync(dbPath)) {
       { id: 3, name: "customer" },
       { id: 4, name: "technician" }
     ],
-    Requests:[],
-    Devices: [],
-    SensorData: [],
-    Nounces:[],
+    Requests:[
+      {
+        "id": 1842,
+        "deviceId": 123,
+        "secret": 1,
+        "type": "SENSOR",
+        "nonce": 0,
+        "activated": true
+      }
+    ],
+    Devices: [
+      {
+        "deviceId": 123,
+        "type": "SENSOR",
+        "authToken": "73868942",
+        "household_id": 1,
+        "status": "active",
+        "createdAt": "2024-12-24T13:19:03.316Z"
+      }
+    ],
+    SensorData: [
+      {"deviceId": 123, "water_level":20, "createdAt": "2024-12-24T13:19:03.316Z"},
+      {"deviceId": 123, "water_level":30, "createdAt": "2024-12-24T13:20:03.316Z"},
+      {"deviceId": 123, "water_level":40, "createdAt": "2024-12-24T13:21:03.316Z"}
+    ],
+    Nounces:[
+      {"deviceId": 123, "nounce":10}
+    ],
   };
   fs.writeFileSync(dbPath, JSON.stringify(initialData, null, 2), "utf-8");
 } else {

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const sensorRoutes = require('./routes/sensorRoutes');
+const deviceRoutes = require('./routes/deviceRoutes');
 const userRoutes = require('./routes/userRoutes');
 const readingRoutes = require('./routes/readingRoutes');
 const userAnalyticsRoutes = require('./routes/userAnalyticsRoutes');
@@ -10,6 +11,7 @@ const householdRoutes = require('./routes/householdRoutes');
 const sensorProbeRoutes = require('./routes/sensorProbeRouters');
 const requestRoutes = require('./routes/requests.routes');
 const routerConfigRoutes = require('./routes/routerConfigRoutes');
+const sensorService = require('./services/sensorService');
 const path = require('path');
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
@@ -60,8 +62,12 @@ mqttClient.on('message', (topic, message) => {
   // Handle incoming messages
   if (topic === 'dev/waterlevel') {
     const waterLevelData = message.toString(); // Decode message as string
-    console.log('Received water level data:', waterLevelData);
-    // TODO: Process and save the data or trigger actions
+    message = JSON.parse(message.toString())
+    return sensorService.handleSensorData(message)
+  }
+  else{
+    console.log(topic)
+    console.log(message.toString())
   }
 });
 
@@ -101,6 +107,7 @@ app.post('/publish', (req, res) =>     {
 
 // Routes
 app.use('/sensors', sensorRoutes);
+app.use('/devices', deviceRoutes);
 app.use('/users', userRoutes);
 app.use('/configs', householdConfigRoutes);
 app.use('/households', householdRoutes);

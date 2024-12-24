@@ -33,8 +33,159 @@
       "name": "technician"
     }
   ],
-  "Requests": [],
-  "Devices": [],
-  "SensorData": [],
-  "Nounces": []
+  "Requests": [
+    {
+      "id": 1842,
+      "deviceId": 123,
+      "secret": 1,
+      "type": "SENSOR",
+      "nonce": 0,
+      "activated": true
+    },
+    {
+      "id": 9985,
+      "deviceId": 12,
+      "secret": 1,
+      "type": "SENSOR",
+      "nonce": 82,
+      "activated": true
+    },
+    {
+      "id": 7756,
+      "deviceId": 14,
+      "secret": 1,
+      "type": "SENSOR",
+      "nonce": 97,
+      "activated": true
+    }
+  ],
+  "Devices": [
+    {
+      "deviceId": 123,
+      "type": "SENSOR",
+      "authToken": "73868942",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-24T13:19:03.316Z"
+    },
+    {
+      "deviceId": 12,
+      "type": "SENSOR",
+      "authToken": "20723296",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-24T14:49:36.370Z"
+    },
+    {
+      "deviceId": 14,
+      "type": "SENSOR",
+      "authToken": "69414437",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-24T14:54:18.101Z"
+    }
+  ],
+  "SensorData": [
+    {
+      "deviceId": 123,
+      "water_level": 20,
+      "createdAt": "2024-12-24T13:19:03.316Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 30,
+      "createdAt": "2024-12-24T13:20:03.316Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 40,
+      "createdAt": "2024-12-24T13:21:03.316Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 45,
+      "createdAt": "2024-12-24T13:28:40.647Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 45,
+      "createdAt": "2024-12-24T13:32:25.657Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 45,
+      "createdAt": "2024-12-24T13:32:33.438Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:02:35.872Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:02:59.218Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:21:36.808Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:22:12.539Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:26:29.656Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:28:07.995Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:28:40.850Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:31:21.562Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 45,
+      "createdAt": "2024-12-24T14:34:07.831Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:39:00.424Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 45,
+      "createdAt": "2024-12-24T14:39:32.615Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:53:47.032Z"
+    },
+    {
+      "deviceId": 123,
+      "water_level": 156,
+      "createdAt": "2024-12-24T14:55:31.081Z"
+    }
+  ],
+  "Nounces": [
+    {
+      "deviceId": 123,
+      "nounce": 10
+    }
+  ]
 }
