@@ -10,6 +10,15 @@ exports.getReadings = (req, res) => {
   }
 };
 
+exports.getLatest = (req, res) => {
+  try {
+    const readings = readingService.getLatestReadings(2);
+    res.json(readings);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
 exports.postReading = (req, res) => {
   try {
     const { deviceId, value, token } = req.body;

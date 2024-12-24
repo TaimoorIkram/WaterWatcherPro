@@ -77,7 +77,7 @@
   import Card from "primevue/card";
   
   // Configuring API URL
-  const API_URL = import.meta.env.VITE_BACKEND_URL;
+  const API_URL = "http://localhost:3001";
   const userStore = useUserStore(); // Initialize the user store
   
   // Loading and dropdown state

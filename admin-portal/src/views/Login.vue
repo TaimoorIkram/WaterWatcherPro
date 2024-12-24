@@ -96,13 +96,14 @@
       
       if (success) {
         const role = userStore.userRole()
-        if (role === 1) {
-          router.push('/admin/user-analytics')
-        } else if (role === 2) {
-          router.push('/admin/user-analytics')
-        } else {
-          router.push('/login')
-        }
+        router.push('/dashboard')
+        // if (role === 1) {
+        //   router.push('/admin/user-analytics')
+        // } else if (role === 2) {
+        //   router.push('/admin/user-analytics')
+        // } else {
+        //   router.push('/login')
+        // }
       } else {
         error.value = loginError || 'Login failed. Please try again.'
       }

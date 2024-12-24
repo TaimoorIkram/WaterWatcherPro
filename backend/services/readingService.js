@@ -1,7 +1,12 @@
 const db = require('../config/db');
 
 exports.getLatestReadings = (limit) => {
-  return db.get('readings').takeRight(limit).value();
+  return db.get('SensorData').takeRight(limit).value();
+};
+
+
+exports.getLatestReadingsForActuators = (userId) => {
+  return db.get('SensorData').takeRight(limit).value();
 };
 
 exports.verifyDeviceToken = (deviceId, providedToken) => {

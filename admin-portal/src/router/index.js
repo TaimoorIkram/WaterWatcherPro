@@ -10,27 +10,27 @@ import WaterLevels from '@/views/WaterLevels.vue';
 import TechniciansView from '@/views/Technicians.vue';
 import { useUserStore } from '@/stores/user.store'; // Import user store
 import CreateCustomer from '@/views/CreateCustomer.vue';
+import DashboardView from '@/views/Dashboard.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // {
-    //   path: '/admin/dashboard',
-    //   name: 'dashboard',
-    //   component: DashboardView,
-    //   meta: { requiresAuth: true, requiredRole: 2 }
-    // },
     {
-      path: '/admin/user-analytics',
-      name: 'userAnalytics',
-      component: UserAnalyticsView,
-      meta: { requiresAuth: true, requiredRole: 2 }
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardView,
     },
     {
-      path: '/admin/community-analytics',
+      path: '/user-analytics',
+      name: 'userAnalytics',
+      component: UserAnalyticsView,
+      // meta: { requiresAuth: true, requiredRole: 2 }
+    },
+    {
+      path: '/community-analytics',
       name: 'communityAnalytics',
       component: CommunityAnalyticsView,
-      meta: { requiresAuth: true, requiredRole: 2 }
+      // meta: { requiresAuth: true, requiredRole: 2 }
     },
     {
       path: '/config',
@@ -41,7 +41,7 @@ const router = createRouter({
       path: '/admin/technicians',
       name: 'technicians',
       component: TechniciansView,
-      meta: { requiresAuth: true, requiredRole: 2 }
+      // meta: { requiresAuth: true, requiredRole: 2 }
     },
     {
       path: '/households/:user_id',
@@ -68,26 +68,26 @@ const router = createRouter({
 });
 
 // Route guard for authentication and authorization
-router.beforeEach((to, from, next) => {
-  const userStore = useUserStore();
+// router.beforeEach((to, from, next) => {
+//   const userStore = useUserStore();
   
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!userStore.isAuthenticated()) {
-      next({ name: 'login' });
-    } else if (to.matched.some(record => record.meta.requiredRole)) {
-      const requiredRole = to.meta.requiredRole;
-      const userRole = userStore.userRole();
-      if (userRole === requiredRole) {
-        next();
-      } else {
-        next({ name: 'login' }); // Redirect to login if the user does not have the required role
-      }
-    } else {
-      next();
-    }
-  } else {
-    next();
-  }
-});
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     if (!userStore.isAuthenticated()) {
+//       next({ name: 'login' });
+//     } else if (to.matched.some(record => record.meta.requiredRole)) {
+//       const requiredRole = to.meta.requiredRole;
+//       const userRole = userStore.userRole();
+//       if (userRole === requiredRole) {
+//         next();
+//       } else {
+//         next({ name: 'login' }); // Redirect to login if the user does not have the required role
+//       }
+//     } else {
+//       next();
+//     }
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;
