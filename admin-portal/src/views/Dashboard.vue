@@ -27,7 +27,6 @@
           stripedRows
           responsiveLayout="scroll"
           class="p-4"
-          class="p-4"
         >
           <!-- Timestamp Column -->
           <Column field="createdAt" header="Timestamp" sortable>
@@ -143,18 +142,13 @@ onMounted(() => {
 
 <style scoped>
 :deep(.p-datatable) {
-<style scoped>
-:deep(.p-datatable) {
   border-radius: 0.5rem;
 }
 
 :deep(.p-card) {
   border-radius: 1rem;
-:deep(.p-card) {
-  border-radius: 1rem;
 }
 
-:deep(.p-column-title) {
 :deep(.p-column-title) {
   font-weight: 600;
   color: #475569;
@@ -163,15 +157,9 @@ onMounted(() => {
 
 :deep(.p-paginator) {
   padding: 1rem;
-:deep(.p-paginator) {
-  padding: 1rem;
   background-color: #f8fafc;
 }
 
-:deep(.p-datatable-header) {
-  background: #f8fafc;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
 :deep(.p-datatable-header) {
   background: #f8fafc;
   border-top-left-radius: 0.5rem;
