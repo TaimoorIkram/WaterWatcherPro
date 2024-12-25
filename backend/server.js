@@ -11,7 +11,9 @@ const householdRoutes = require('./routes/householdRoutes');
 const sensorProbeRoutes = require('./routes/sensorProbeRouters');
 const requestRoutes = require('./routes/requests.routes');
 const routerConfigRoutes = require('./routes/routerConfigRoutes');
+const sessionRoutes = require('./routes/sessionRoutes');
 const sensorService = require('./services/sensorService');
+const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
@@ -24,7 +26,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+app.use(bodyParser.json());
 
 
 // MQTT Client Setup
@@ -119,6 +121,7 @@ app.use('/routerconfigs', routerConfigRoutes);
 app.use('/api/user/analytics', userAnalyticsRoutes);
 app.use('/api/community/analytics', communityAnalyticsRoutes);
 app.use('/requests', requestRoutes);
+app.use('/session', sessionRoutes);
 
 const PORT = process.env.PORT || 3001;
 

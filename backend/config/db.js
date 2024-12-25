@@ -20,38 +20,39 @@ if (!fs.existsSync(dbPath)) {
       { id: 3, name: "customer" },
       { id: 4, name: "technician" }
     ],
-    Requests:[
+    Requests: [
       {
-        "id": 1842,
-        "deviceId": 123,
-        "secret": 1,
-        "type": "SENSOR",
-        "nonce": 0,
-        "activated": true
+        id: 1842,
+        deviceId: 123,
+        secret: 1,
+        type: "SENSOR",
+        nonce: 0,
+        activated: true
       }
     ],
     Devices: [
       {
-        "deviceId": 123,
-        "type": "SENSOR",
-        "authToken": "73868942",
-        "household_id": 1,
-        "status": "active",
-        "createdAt": "2024-12-24T13:19:03.316Z"
+        deviceId: 123,
+        type: "SENSOR",
+        authToken: "73868942",
+        household_id: 1,
+        status: "active",
+        createdAt: "2024-12-24T13:19:03.316Z",
+        secret: 123,
+        num3: null,
+        num4: null,
+        Skey: null,
+        Dkey: null,
+        sessionKey: null
       }
     ],
     SensorData: [
-      {"deviceId": 123, "water_level":20, "createdAt": "2024-12-24T13:19:03.316Z"},
-      {"deviceId": 123, "water_level":30, "createdAt": "2024-12-24T13:20:03.316Z"},
-      {"deviceId": 123, "water_level":40, "createdAt": "2024-12-24T13:21:03.316Z"}
+      { deviceId: 123, water_level: 20, createdAt: "2024-12-24T13:19:03.316Z" },
+      { deviceId: 123, water_level: 30, createdAt: "2024-12-24T13:20:03.316Z" },
+      { deviceId: 123, water_level: 40, createdAt: "2024-12-24T13:21:03.316Z" }
     ],
-    Nounces:[
-      {"deviceId": 123, "nounce":10}
-    ],
-    Requests:[],
-    RequestNonce:[],
-    Devices: [],
-    SensorData: [],
+    Nonces: [],
+    RequestNonce: []
   };
   fs.writeFileSync(dbPath, JSON.stringify(initialData, null, 2), "utf-8");
 } else {
@@ -60,5 +61,16 @@ if (!fs.existsSync(dbPath)) {
 
 const adapter = new FileSync(dbPath);
 const db = low(adapter);
+
+// Ensure the database structure is updated even if the database already exists
+db.defaults({
+  User: [],
+  Roles: [],
+  Requests: [],
+  Devices: [],
+  SensorData: [],
+  Nounces: [],
+  RequestNonce: []
+}).write();
 
 module.exports = db;

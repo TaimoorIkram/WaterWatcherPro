@@ -35,15 +35,20 @@ exports.updateRequestStatus = (deviceId) => {
 };
 
 exports.createSensorRequestNonce = (deviceId) => {
-    const nonce = Math.floor(Math.random() * 256);
-
-    db.get('RequestNonce').push({id: deviceId, nonce: nonce}).write();
-    return nonce
+    const nonce = Math.floor(Math.random() * 127);
+    
+    const existingNonce = db.get('Nonces').find({ deviceId: deviceId }).value();
+    if (existingNonce) {
+        db.get('Nonces').find({ deviceId: deviceId }).assign({ nonce: nonce }).write();
+    } else {
+        db.get('Nonces').push({ deviceId: deviceId, nonce: nonce }).write();
+    }
+    return nonce;
 }
 
 exports.getNonceByDeviceId = (deviceId) => {
-    const nonce = db.get('RequestNonce').find({ id: deviceId }).value()
-    return nonce
+    const nonce = db.get('Nonces').find({ deviceId: deviceId }).value();
+    return nonce;
 }
 
 
