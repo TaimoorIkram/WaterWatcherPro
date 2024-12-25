@@ -35,27 +35,50 @@
   ],
   "Requests": [
     {
-      "id": 1842,
-      "deviceId": 123,
-      "secret": 1,
+      "id": 6188,
+      "deviceId": 368857,
+      "secret": 10,
       "type": "SENSOR",
-      "nonce": 0,
+      "nonce": 53,
+      "activated": true
+    },
+    {
+      "id": 9542,
+      "deviceId": 373681,
+      "secret": 10,
+      "type": "SENSOR",
+      "nonce": 80,
       "activated": true
     }
   ],
   "Devices": [
     {
-      "deviceId": 123,
+      "deviceId": 368857,
       "type": "SENSOR",
-      "authToken": "73868942",
+      "authToken": "31839646",
       "household_id": 1,
       "status": "active",
-      "createdAt": "2024-12-24T13:19:03.316Z",
-      "secret": 123,
-      "num3": 20,
-      "num4": 0,
-      "Skey": 28,
-      "sessionKey": null
+      "createdAt": "2024-12-25T18:26:15.678Z",
+      "secret": 10,
+      "num3": 29,
+      "num4": 23,
+      "Skey": 43,
+      "Dkey": 123,
+      "sessionKey": 166
+    },
+    {
+      "deviceId": 373681,
+      "type": "SENSOR",
+      "authToken": "87940332",
+      "household_id": 1,
+      "status": "active",
+      "createdAt": "2024-12-25T21:14:42.131Z",
+      "secret": 10,
+      "num3": 14,
+      "num4": 36,
+      "Skey": 2,
+      "Dkey": 123,
+      "sessionKey": 125
     }
   ],
   "SensorData": [
@@ -77,12 +100,12 @@
   ],
   "Nonces": [
     {
-      "deviceId": 123,
+      "deviceId": 368857,
       "nonce": 32
     },
     {
-      "deviceId": 123,
-      "nonce": 17
+      "deviceId": 373681,
+      "nonce": 63
     }
   ],
   "RequestNonce": [],

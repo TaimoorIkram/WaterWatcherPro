@@ -20,32 +20,8 @@ if (!fs.existsSync(dbPath)) {
       { id: 3, name: "customer" },
       { id: 4, name: "technician" }
     ],
-    Requests: [
-      {
-        id: 1842,
-        deviceId: 123,
-        secret: 1,
-        type: "SENSOR",
-        nonce: 0,
-        activated: true
-      }
-    ],
-    Devices: [
-      {
-        deviceId: 123,
-        type: "SENSOR",
-        authToken: "73868942",
-        household_id: 1,
-        status: "active",
-        createdAt: "2024-12-24T13:19:03.316Z",
-        secret: 123,
-        num3: null,
-        num4: null,
-        Skey: null,
-        Dkey: null,
-        sessionKey: null
-      }
-    ],
+    Requests: [],
+    Devices: [],
     SensorData: [
       { deviceId: 123, water_level: 20, createdAt: "2024-12-24T13:19:03.316Z" },
       { deviceId: 123, water_level: 30, createdAt: "2024-12-24T13:20:03.316Z" },

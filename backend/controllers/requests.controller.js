@@ -4,19 +4,51 @@ const SBOX = [0x9, 0x4, 0xA, 0xB, 0xD, 0x1, 0x8, 0x5, 0x6, 0x2, 0x0, 0x3, 0xC, 0
 const INV_SBOX = [0xA, 0x5, 0x9, 0xB, 0x1, 0x7, 0x8, 0xF, 0x6, 0x0, 0x2, 0x3, 0xC, 0x4, 0xD, 0xE];
 
 const saesEncrypt = (plaintext, key) => {
-  let state = plaintext;
-  state ^= key;
-  state = (SBOX[state >> 4] << 4) | SBOX[state & 0x0F];
-  state ^= key;
-  return state;
+  // Convert plaintext to uint8 if it's a string
+  const input = typeof plaintext === 'string' ? plaintext.charCodeAt(0) : plaintext;
+  // Ensure key is uint8
+  const k = key & 0xFF;
+  
+  let state = input & 0xFF; // Ensure 8-bit value
+  state ^= k;
+  state = (SBOX[(state >> 4) & 0x0F] << 4) | SBOX[state & 0x0F];
+  state ^= k;
+  return state & 0xFF;
 };
 
 const saesDecrypt = (ciphertext, key) => {
-  let state = ciphertext;
-  state ^= key;
-  state = (INV_SBOX[state >> 4] << 4) | INV_SBOX[state & 0x0F];
-  state ^= key;
-  return state;
+  // Convert ciphertext to uint8 if it's a string
+  const input = typeof ciphertext === 'string' ? ciphertext.charCodeAt(0) : ciphertext;
+  // Ensure key is uint8
+  const k = key & 0xFF;
+  
+  let state = input & 0xFF; // Ensure 8-bit value
+  state ^= k;
+  state = (INV_SBOX[(state >> 4) & 0x0F] << 4) | INV_SBOX[state & 0x0F];
+  state ^= k;
+  return state & 0xFF;
+};
+
+const toHexString = (input) => {
+  let hexString = '';
+  for (let i = 0; i < input.length; i++) {
+    let hex = input.charCodeAt(i).toString(16).toUpperCase();
+    if (hex.length < 2) {
+      hex = '0' + hex;
+    }
+    hexString += hex;
+  }
+  return hexString;
+};
+
+const fromHexString = (hexString) => {
+  let result = '';
+  for (let i = 0; i < hexString.length; i += 2) {
+    let byteString = hexString.substring(i, i + 2);
+    let byte = parseInt(byteString, 16);
+    result += String.fromCharCode(byte);
+  }
+  return result;
 };
 
 exports.activateDevice = (req, res) => {
@@ -91,7 +123,13 @@ exports.verifyAndCreateDevice = (req, res) => {
       authToken,
       household_id: 1,
       status: 'active',
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
+      secret: request.secret,
+      num3: null, 
+      num4: null,
+      Skey: null,
+      Dkey: null,
+      sessionKey: null
     };
 
     requestsService.createSensor(sensor);
@@ -124,21 +162,21 @@ exports.getDeviceNonce = (req, res) => {
 const verifyTempAuthToken = (deviceId, tempAuthToken) => {
   const device = requestsService.getDeviceById(deviceId);
   if (device) {
-    const nonce = requestsService.getNonceByDeviceId(deviceId);
+    const nonce = requestsService.getNonceByDeviceId(deviceId);    
     const sessionKey = device.sessionKey;
 
     // Decrypt the tempAuthToken using the sessionKey
-    let decryptedTempAuthToken = "";
-    for (let i = 0; i < tempAuthToken.length; i++) {
-      decryptedTempAuthToken += String.fromCharCode(saesDecrypt(tempAuthToken.charCodeAt(i), sessionKey));
-    }
-
+    const tempAuthTokenDecoded = decryptString(fromHexString(tempAuthToken), sessionKey);
+    const tempAuthTokenValue = JSON.parse(tempAuthTokenDecoded)['TAuthToken']
+    
     // Extract authToken, nonce and calculate expected value
-    const authToken = device.authToken;
+    const authToken = parseInt(device.authToken);
     const receivedNonce = nonce.nonce;
     const expectedTempAuthToken = authToken + receivedNonce + (1000 * receivedNonce);
-
-    if (parseInt(decryptedTempAuthToken) === expectedTempAuthToken) {
+    
+    console.log("This is the decrypted message temp auth token valye")
+    console.log(tempAuthTokenValue, expectedTempAuthToken)
+    if (tempAuthTokenValue === expectedTempAuthToken) {
       return { verified: true };
     } else {
       return { verified: false, reason: "Invalid Temp Auth Token" };
@@ -148,15 +186,31 @@ const verifyTempAuthToken = (deviceId, tempAuthToken) => {
   }
 };
 
+// Helper functions for string encryption/decryption
+function encryptString(str, key) {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    result += String.fromCharCode(saesEncrypt(str.charCodeAt(i), key));
+  }
+  return result;
+}
+
+function decryptString(str, key) {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    result += String.fromCharCode(saesDecrypt(str.charCodeAt(i), key));
+  }
+  return result;
+}
 
 exports.getMQTTCreds = (req, res) => {
   try {
     const deviceId = parseInt(req.get('DevID'));
     const tempAuthToken = req.get('TAuthToken');
     const isAuthTokenVerified = verifyTempAuthToken(deviceId, tempAuthToken);
-    const nonce = requestsService.createSensorRequestNonce(deviceId);
-
+    
     if (isAuthTokenVerified.verified) {
+      const nonce = requestsService.createSensorRequestNonce(deviceId);
       const responsePayload = {
         mqttServer: "10.7.233.71",
         username: "sensor",
@@ -168,14 +222,12 @@ exports.getMQTTCreds = (req, res) => {
       const device = requestsService.getDeviceById(deviceId);
       const sessionKey = device.sessionKey;
 
-      // Encrypt the responsePayload using sessionKey
+      // Encrypt the responsePayload using sessionKey      
       const responseString = JSON.stringify(responsePayload);
-      let encryptedResponse = "";
-      for (let i = 0; i < responseString.length; i++) {
-        encryptedResponse += String.fromCharCode(saesEncrypt(responseString.charCodeAt(i), sessionKey));
-      }
+      const encryptedResponse = toHexString(encryptString(responseString, sessionKey));
 
-      return { encryptedResponse };
+      console.log("CREDENTIALS ISSUED !!!!")
+      res.status(200).json({ encryptedResponse: encryptedResponse });
     } else {
       res.status(403).json({
         reason: isAuthTokenVerified.reason,

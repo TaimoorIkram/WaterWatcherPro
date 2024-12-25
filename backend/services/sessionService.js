@@ -21,30 +21,55 @@ const saesDecrypt = (ciphertext, key) => {
   return state;
 };
 
+const toHexString = (input) => {
+  let hexString = '';
+  for (let i = 0; i < input.length; i++) {
+    let hex = input.charCodeAt(i).toString(16);
+    if (hex.length < 2) {
+      hex = '0' + hex;
+    }
+    hexString += hex;
+  }
+  return hexString;
+};
+
+const fromHexString = (hexString) => {
+  let result = '';
+  for (let i = 0; i < hexString.length; i += 2) {
+    let byteString = hexString.substring(i, i + 2);
+    let byte = parseInt(byteString, 16);
+    result += String.fromCharCode(byte);
+  }
+  return result;
+};
+
 exports.initializeSession = (deviceId, encryptedMessage) => {
   try {
-    const device = db.get('Devices').find({ deviceId }).value();
-    if (!device) {
-      return { error: 'Device not found' };
+    const reqDevice = db.get('Requests').find({ deviceId: deviceId }).value();
+    if (!reqDevice) {
+      return { error_code: 404, error: 'Device not found' };
+    } else if (!reqDevice.activated) {
+      return { error_code: 403, error: 'Device not Activated' };
     }
 
+    const device = db.get('Devices').find({ deviceId }).value();
     const secret = device.secret;
 
     // Decrypt the message to extract num1 and num2
-    let decryptedMessage = "";
-    for (let i = 0; i < encryptedMessage.length; i++) {
-      decryptedMessage += String.fromCharCode(saesDecrypt(encryptedMessage.charCodeAt(i), secret));
+    const encryptedMessageDecoded = fromHexString(encryptedMessage);
+    let decryptedMessage = '';
+    for (let i = 0; i < encryptedMessageDecoded.length; i++) {
+      decryptedMessage += String.fromCharCode(saesDecrypt(encryptedMessageDecoded.charCodeAt(i), secret));
     }
 
     console.log("Decrypted Message String:", decryptedMessage);
-    
+
     try {
       decryptedMessage = JSON.parse(decryptedMessage);
     } catch (err) {
-      return { error: 'Invalid encrypted message format' };
+      return { error_code: 400, error: 'Invalid encrypted message format' };
     }
 
-    console.log(decryptedMessage);
     const num1 = decryptedMessage.num1;
     const num2 = decryptedMessage.num2;
 
@@ -65,15 +90,18 @@ exports.initializeSession = (deviceId, encryptedMessage) => {
 
     // Create response message
     const responseMessage = JSON.stringify({ challengeRes, num3, num4 });
-    let encryptedResponse = "";
+    let encryptedResponse = '';
     for (let i = 0; i < responseMessage.length; i++) {
       encryptedResponse += String.fromCharCode(saesEncrypt(responseMessage.charCodeAt(i), secret));
     }
 
+    // Convert encrypted response to hexadecimal string
+    encryptedResponse = toHexString(encryptedResponse);
+
     return { deviceId, encryptedResponse };
   } catch (err) {
     console.error("Error in initializeSession:", err);
-    return { error: 'Internal server error' };
+    return { error_code: 500, error: 'Internal server error' };
   }
 };
 
@@ -81,23 +109,24 @@ exports.validateSession = (deviceId, encryptedMessage) => {
   try {
     const device = db.get('Devices').find({ deviceId }).value();
     if (!device) {
-      return { error: 'Device not found' };
+      return { error_code: 404, error: 'Device not found' };
     }
 
     const secret = device.secret;
 
     // Decrypt the message
-    let decryptedMessage = "";
-    for (let i = 0; i < encryptedMessage.length; i++) {
-      decryptedMessage += String.fromCharCode(saesDecrypt(encryptedMessage.charCodeAt(i), secret));
+    const encryptedMessageDecoded = fromHexString(encryptedMessage);
+    let decryptedMessage = '';
+    for (let i = 0; i < encryptedMessageDecoded.length; i++) {
+      decryptedMessage += String.fromCharCode(saesDecrypt(encryptedMessageDecoded.charCodeAt(i), secret));
     }
 
     console.log("Decrypted Message String:", decryptedMessage);
-    
+
     try {
       decryptedMessage = JSON.parse(decryptedMessage);
     } catch (err) {
-      return { error: 'Invalid encrypted message format' };
+      return { error_code: 400, error: 'Invalid encrypted message format' };
     }
 
     const receivedChallengeRes = decryptedMessage.challengeRes;
@@ -108,9 +137,9 @@ exports.validateSession = (deviceId, encryptedMessage) => {
     console.log("Received Challenge Res", receivedChallengeRes);
     console.log("Dkey", Dkey);
 
-    // Validate num3 and num4
+    // Validate challengeRes
     if (receivedChallengeRes !== device.num3 + device.num4) {
-      return { error: 'Invalid Challenge Responce' };
+      return { error_code: 400, error: 'Invalid Challenge Response' };
     }
 
     const nonce = generateRandomNum();
@@ -118,22 +147,33 @@ exports.validateSession = (deviceId, encryptedMessage) => {
 
     // Encrypt the response with hello, Skey, authToken, and nonce
     const responseMessage = JSON.stringify({ message: 'hello', Skey, authToken: device.authToken, nonce });
-    let encryptedResponse = "";
+    let encryptedResponse = '';
     for (let i = 0; i < responseMessage.length; i++) {
       encryptedResponse += String.fromCharCode(saesEncrypt(responseMessage.charCodeAt(i), secret));
     }
 
-    const sessionKey = Skey + Dkey
+    const sessionKey = Skey + Dkey;
 
-    // Store the nonce and Skey
+    // Check if there is an entry for deviceId, then update its nonce, if no entry then create the entry with nonce
+  const existingNonce = db.get('Nonces').find({ deviceId }).value();
+  if (existingNonce) {
+    db.get('Nonces').find({ deviceId }).assign({ nonce }).write();
+  } else {
     db.get('Nonces').push({ deviceId, nonce }).write();
-    db.get('Devices').find({ deviceId }).assign({ Skey }).write();
-    db.get('Devices').find({ deviceId }).assign({ Dkey }).write();
-    db.get('Devices').find({ deviceId }).assign({ sessionKey }).write();
+  }
+
+  // Store the nonce and Skey
+  db.get('Devices').find({ deviceId }).assign({ Skey }).write();
+  db.get('Devices').find({ deviceId }).assign({ Dkey }).write();
+  db.get('Devices').find({ deviceId }).assign({ sessionKey }).write();
+
+
+    // Convert encrypted response to hexadecimal string
+    encryptedResponse = toHexString(encryptedResponse);
 
     return { encryptedResponse };
   } catch (err) {
     console.error("Error in validateSession:", err);
-    return { error: 'Internal server error' };
+    return { error_code: 500, error: 'Internal server error' };
   }
 };

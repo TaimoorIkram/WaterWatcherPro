@@ -1,6 +1,9 @@
 const db = require('../config/db');
 
-exports.getDeviceById = (deviceId) => db.get('Devices').find({ deviceId }).value()
+exports.getDeviceById = (deviceId) => {
+    const device = db.get('Devices').find({deviceId}).value();
+    return device;
+};
 
 exports.activateDevice = (newRequest) => {
     db.get('Requests').push(newRequest).write();
