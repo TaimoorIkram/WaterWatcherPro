@@ -1,4 +1,4 @@
-# Project Title
+# WaterWatcherPro
 
 ## Table of Contents
 - [Project Description](#project-description)
