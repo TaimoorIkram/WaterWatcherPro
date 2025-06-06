@@ -1,4 +1,3 @@
-```markdown
 # Project Title
 
 ## Table of Contents
